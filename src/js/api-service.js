@@ -1,4 +1,7 @@
 import axios from 'axios';
+
+//import { createGenresFromID, createYear } from '../data/data-combine';
+
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 
