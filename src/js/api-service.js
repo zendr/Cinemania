@@ -1,10 +1,12 @@
 import axios from 'axios';
+
 //import { createGenresFromID, createYear } from '../data/data-combine';
+
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
-export default {
+
   // Получение полной информации о трендах
-  async getTrendData(page) {
+  export async function getTrendData(page) {
     try {
       const { data } = await axios.get(
         `${TREND_URL}?api_key=${API_KEY}&page=${page}`,
@@ -14,10 +16,10 @@ export default {
     } catch (error) {
       console.error('Smth wrong with api get full trends' + error);
     }
-  },
+  };
 
   // Фетч по поисковому запросу
-  async fetchMovieSearcher(text, page) {
+  export async function fetchMovieSearcher(text, page) {
     try {
       const { data } = await axios.get(
         `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`,
@@ -27,10 +29,10 @@ export default {
     } catch (error) {
       console.error('Smth wrong with api search fetch' + error);
     }
-  },
+  };
 
   // Фетч фильма по его ID
-  async getMovieById(id) {
+  export async function getMovieById(id) {
     try {
       const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
 
@@ -44,5 +46,4 @@ export default {
     } catch (error) {
       console.error('Smth wrong with api ID fetch' + error);
     }
-  },
-};
+  };

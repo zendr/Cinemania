@@ -5,4 +5,11 @@ const SEARCH_URL = `${BASE_URL}/search/movie`;
 const ID_URL = `${BASE_URL}/movie/`;
 
 
-export { API_KEY, BASE_URL, TREND_URL, SEARCH_URL, ID_URL };
+const IMG_BASE_URL = `https://image.tmdb.org/t/p`;
+const IMG_W400 = `/w400`;
+
+
+export { API_KEY, BASE_URL, TREND_URL, SEARCH_URL, ID_URL, IMG_BASE_URL,  IMG_W400};
+
+
+
