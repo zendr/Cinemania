@@ -65,7 +65,6 @@ export function createListMarkup(data) {
           }
           else{posterPath='https://i.ibb.co/C0LFwTh/OIF.jpg'}
           return `<li class='cards-list__item' key='${id}'>
-          <a class="cards__link" href="#}">
             <img
               class='cards-list__img'
               src='${posterPath}'
@@ -73,15 +72,13 @@ export function createListMarkup(data) {
               width
               loading='lazy'
             />
-            <span class='cards-list__rate'>${vote_average.toFixed(1)}</span>
             <div class='cards-list__wrap'>
-              <h2 class='cards-list__title'>${original_title}</h2>
               <div class='cards-list__info'>
-                <p class='cards-list__text'>${genre_names}</p>
-                <p class='cards-list__age'>| ${release_date}</p>
+                <h2 class='cards-list__title'>${original_title}</h2>
+                <p class='cards-list__text'>${genre_names} | ${release_date}</p>
               </div>
+              <span class='cards-list__rate'>${vote_average.toFixed(1)}</span>
             </div>
-            </a>
             </li>
             `}
       )

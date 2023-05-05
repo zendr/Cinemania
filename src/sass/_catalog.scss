@@ -1,0 +1,149 @@
+body{
+    background-color: var(--secondary-bc-color);
+}
+
+.cards__list {
+    display: grid;
+    max-width: calc(320px - 40px);
+    grid-template-columns: repeat(1, minmax(280px, 1fr));
+    grid-row-gap: 16px;
+    margin: 0 auto;
+    list-style: none;
+    justify-content: center;
+    @include respond-min('tablets') {
+        max-width: calc(768px - 64px);
+        grid-template-columns: repeat(3, minmax(224px, 1fr));
+        grid-column-gap: 16px;
+        grid-row-gap: 28px;
+    }
+    @include respond-min('pc') {
+        max-width: calc(1280px - 64px);
+        grid-template-columns: repeat(3, minmax(395px, 1fr));
+        grid-column-gap: 16px;
+        grid-row-gap: 32px;
+    }
+
+    position: relative;
+}
+
+.cards-list__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 406px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+    cursor: pointer;
+
+    z-index: 0;
+
+    @include respond-min('tablets') {
+        height: 325px;
+    }
+    @include respond-min('pc') {
+        height: 574px;
+    }
+}
+
+.cards-list__item::before {
+    position: absolute;
+    content: " ";
+    background: var(--background-cards);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.cards-list__item:hover {
+    transform: scale(1.02) translateZ(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+.cards-list__wrap {
+    display: flex;
+    align-items: baseline;
+
+    padding: 12px 12px 0px 12px;
+    position: absolute;
+    bottom: 12px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+
+    z-index: 2;
+
+    width: 280px;
+
+    @include respond-min('tablets') {
+        width: 224px;
+    }
+    @include respond-min('pc') {
+        width: 395px;
+    }
+}
+
+.cards-list__img {
+    border-radius: inherit;
+    height: 406px;
+    @include respond-min('tablets') {
+        height: 325px;
+    }
+    @include respond-min('pc') {
+        height: 574px;
+    }
+    box-shadow: 0px 3px 4px 1px rgba(44, 133, 200, 0.2);
+}
+
+.cards-list__info {
+    max-width: 90%;
+}
+
+.cards-list__title {
+    font-size: 12px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    overflow: hidden;
+    color: var(--white-color);
+    @include respond-min('tablets') {
+        line-height: 1.2;
+    }
+    @include respond-min('pc') {
+        font-size: 20px;
+        line-height: 1.67;
+    }
+}
+.cards-list__text {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow: hidden;
+    color: var(--light-grey-color);
+
+    @include respond-min('pc') {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
+
+.cards-list__rate {
+    color: var(--light-grey-color);
+    margin-top: auto;
+    margin-left: auto;
+
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include respond-min('pc') {
+        font-size: 20px;
+        line-height: 1.2;
+        
+    }
+}

@@ -1,0 +1,129 @@
+.search__form--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 40px;
+    padding-bottom: 16px;
+
+    @include respond-min('tablets') {
+        padding-top: 60px;
+        padding-bottom: 36px;
+    }
+
+    @include respond-min('pc') {
+        padding-top: 80px;
+        padding-bottom: 48px;
+    }
+}
+
+.search__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 280px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    color: var(--light-grey-color);
+
+    @include respond-min('tablets') {
+        width: 264px;
+    }
+
+    @include respond-min('pc') {
+        width: 398px;
+    }
+}
+
+.search__form--input {
+    width: 224px;
+    height: 40px;
+    background-color: transparent;
+    outline: none;
+
+    border: 1px solid var(--white-color);
+    border-radius: 8px;
+    color: inherit;
+
+    font-size: 14px;
+    line-height: 1.14;
+    font-weight: var(--font-weight-medium);
+
+    padding-left: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include respond-min('tablets') {
+        width: 204px;
+        height: 44px;
+
+        padding-left: 20px;
+    }
+
+    @include respond-min('pc') {
+        width: 334px;
+        height: 48px;
+        font-size: 16px;
+        line-height: 1.18;
+        padding-left: 24px;
+    }
+
+    &::placeholder {
+        color: inherit;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    &:focus {
+        &::placeholder {
+            color: transparent;
+        }
+        transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 0 20px var(--accent-color);
+    }
+}
+
+.search__form--button {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    background: var(--linear-to-top);
+    border: none;
+    border-radius: 50%;
+    color: var(--white-color);
+
+    @include respond-min('tablets') {
+        width: 44px;
+        height: 44px;
+    }
+
+    @include respond-min('pc') {
+        width: 48px;
+        height: 48px;
+    }
+
+    &:hover {
+        border: 2px solid var(--accent-color);
+        background: var(--white-color);
+        color: var(--accent-color);
+        .search__form--icon {
+            transform: scale(1.2) rotate(40deg);
+        }
+    }
+}
+
+.search__form--icon {
+    width: 18px;
+    height: 18px;
+
+    @include respond-min('pc') {
+        width: 20px;
+        height: 20px;
+    }
+
+    fill: currentColor;
+    stroke-width: 0;
+    stroke: currentColor;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
