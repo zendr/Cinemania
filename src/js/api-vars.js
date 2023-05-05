@@ -4,4 +4,5 @@ const TREND_URL = `${BASE_URL}/trending/movie/week`;
 const SEARCH_URL = `${BASE_URL}/search/movie`;
 const ID_URL = `${BASE_URL}/movie/`;
 
+
 export { API_KEY, BASE_URL, TREND_URL, SEARCH_URL, ID_URL };
