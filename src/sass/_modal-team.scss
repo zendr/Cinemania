@@ -87,21 +87,7 @@
     font-size: 30px;
   }
 }
-.team__title:after {
-  content: '';
-  display: block;
-  position: relative;
-  z-index: -1;
-  width: 100%;
-  margin: auto;
-  border-bottom: 3px solid black;
-  bottom: 0.15em;
-  transition: all 1s;
-}
-H1:hover:after {
-  width: 0%;
-  border-bottom-width: 1px;
-}
+
 
 .team__box {
   display: flex;
@@ -156,7 +142,7 @@ H1:hover:after {
   width: 100px;
   border: 2px;
   margin: auto;
-  border-radius: 50px;
+  border-radius: 5px;
   box-shadow: 0px 0px 3px 5px #ccc;
 }
 
