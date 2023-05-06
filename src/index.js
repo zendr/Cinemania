@@ -9,3 +9,4 @@ import './js/render';
 import './js/searchMovie';
 import './js/trandings';
 import './js/my-library';
+import './js/header'

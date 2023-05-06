@@ -1,0 +1,57 @@
+<section class="header">
+    <div class="container">
+        <div class="header_box">
+        <div class="header_res">
+          <a href="./index.html" class="header_logo-box">
+            <div class="logo">
+                <picture>
+                    <source srcset="
+                    ./images/header/logo_tab_1x.png 1x,
+                    ./images/header/logo_tab_2x.png 2x
+                      " media="(min-width: 768px)" />
+                    <source srcset="
+                        ./images/header/logo_mob_1x.png 1x,
+                        ./images/header/logo_mob_2x.png 2x
+                      " media="(max-width: 767.33px)" />
+                    <img src="./images/header/logo_tab_1x.png" width="100%" height="100%" alt="Морозивко" />
+                  </picture>
+              </div>
+              <span class="logo_text">Cinemania</span>
+            </a>
+          <span class="menu" id="menu">MENU</span>
+          <ul class="nav">
+            <a href="./index.html"><li class="nav_list">HOME</li></a>
+            <a href="./catalog.html"><li class="nav_list">CATALOG</li></a>
+            <a href="./library.html"><li class="nav_list">MY LIBRARY</li></a>
+          </ul>
+        </div>
+              <div class="theme" id="themeBtn" data-theme="false">
+                <svg class="theme-moon" id="themeMoon">
+                  <use href="./images/svg/sprite.svg#icon-moon-mb"></use>
+                </svg>
+                <img src="./images/header/elipse.png" alt="" class="theme-elipse" id="themeElipse">
+                <svg class="theme-sun" id="themeSun">
+                  <use href="./images/svg/sprite.svg#icon-sunshine"></use>
+                </svg>
+              </div>
+        </div>
+    </div>
+</section>
+<div class="mobile is-hidden" id="mobile">
+    <div class="blind blind-hidden" id="blind">
+      <div class="logo">
+        <picture>
+            <source srcset="
+                ./images/header/logo_mob_1x.png 1x,
+                ./images/header/logo_mob_2x.png 2x
+              " media="(max-width: 767.33px)" />
+            <img src="./images/header/logo_tab_1x.png" width="100%" height="100%" alt="Морозивко" />
+          </picture>
+      </div>
+      <ul class="nav-mob">
+        <a href="./index.html"><li class="nav_list-mob">HOME</li></a>
+        <a href="./catalog.html"><li class="nav_list-mob">CATALOG</li></a>
+        <a href="./library.html"><li class="nav_list-mob">MY LIBRARY</li></a>
+      </ul>
+    </div>
+</div>
