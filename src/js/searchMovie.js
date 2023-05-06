@@ -9,7 +9,7 @@ if (form) {
 
 function search(event) {
   event.preventDefault();
-  searchPage = 1;
+  let searchPage = 1;
   query = event.currentTarget.elements.search.value.toLowerCase().trim();
   saveLs('query-pg', query);
   if (query == '') {

@@ -4,16 +4,16 @@
     justify-content: center;
 
     padding-top: 40px;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 
     @include respond-min('tablets') {
         padding-top: 60px;
-        padding-bottom: 36px;
+        margin-bottom: 36px;
     }
 
     @include respond-min('pc') {
         padding-top: 80px;
-        padding-bottom: 48px;
+        margin-bottom: 48px;
     }
 }
 
