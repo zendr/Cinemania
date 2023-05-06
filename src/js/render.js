@@ -62,13 +62,14 @@ export function createListMarkup(data) {
           } else {
             posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
           }
-          return `<li class='cards-list__item' key='${id}'>
+          return `<li class='cards-list__item'>
             <img
               class='cards-list__img'
               src='${posterPath}'
               alt='${original_title}'
               width
               loading='lazy'
+              data-id='${id}'
             />
             <div class='cards-list__wrap'>
               <div class='cards-list__info'>
