@@ -1,21 +1,20 @@
 import { cards } from './refs';
 import { saveLs } from './storage';
 import axios from 'axios';
-import {IMG_BASE_URL, BASE_URL, IMG_W400, API_KEY} from './api-vars';
-
+import { IMG_BASE_URL, BASE_URL, IMG_W400, API_KEY } from './api-vars';
 
 export async function getMovieGenres() {
-  const { data } = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`);
+  const { data } = await axios.get(
+    `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`
+  );
   return data;
-};
-
+}
 
 export async function getGenres() {
   const genres = await getMovieGenres().then(({ genres }) => genres);
 
   return { genres };
 }
-
 
 export function renderMarkup(data) {
   getGenres().then(({ genres }) => {
@@ -40,37 +39,37 @@ export function renderMarkup(data) {
     }
     const markupList = createListMarkup(data.results);
     if (cards) {
-        cards.innerHTML = markupList;
+      cards.innerHTML = markupList;
     }
   });
- 
 }
 
 export function createListMarkup(data) {
   if (data) {
-      return data
+    return data
       .map(
         ({
           original_title,
           poster_path,
-          overview,
           vote_average,
           id,
           genre_names,
           release_date,
         }) => {
-          let posterPath = ``
-          if(poster_path){
-            posterPath=`${IMG_BASE_URL}${IMG_W400}${poster_path}`;
+          let posterPath = ``;
+          if (poster_path) {
+            posterPath = `${IMG_BASE_URL}${IMG_W400}${poster_path}`;
+          } else {
+            posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
           }
-          else{posterPath='https://i.ibb.co/C0LFwTh/OIF.jpg'}
-          return `<li class='cards-list__item' key='${id}'>
+          return `<li class='cards-list__item'>
             <img
               class='cards-list__img'
               src='${posterPath}'
               alt='${original_title}'
               width
               loading='lazy'
+              data-id='${id}'
             />
             <div class='cards-list__wrap'>
               <div class='cards-list__info'>
@@ -80,7 +79,8 @@ export function createListMarkup(data) {
               <span class='cards-list__rate'>${vote_average.toFixed(1)}</span>
             </div>
             </li>
-            `}
+            `;
+        }
       )
       .join('');
   }

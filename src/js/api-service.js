@@ -9,7 +9,7 @@ import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
   export async function getTrendData(page) {
     try {
       const { data } = await axios.get(
-        `${TREND_URL}?api_key=${API_KEY}&page=${page}`,
+        `${TREND_URL}?api_key=${API_KEY}&page=${page}`
       );
 
       return data;
@@ -22,7 +22,7 @@ import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
   export async function fetchMovieSearcher(text, page) {
     try {
       const { data } = await axios.get(
-        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`,
+        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`
       );
 
       return data;

@@ -5,8 +5,8 @@ const refs = {
   teamModal: document.getElementsByClassName('team__modal'),
 };
 
-refs.openModal.addEventListener('click', openModalTeam);
-refs.closeModal.addEventListener('click', closeModalTeam);
+if (refs.openModal) refs.openModal.addEventListener('click', openModalTeam);
+if (refs.closeModal) refs.closeModal.addEventListener('click', closeModalTeam);
 
 function openModalTeam(event) {
   refs.teamBackdrop.classList.remove('team__backdrop--hidden');
