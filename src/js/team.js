@@ -1,0 +1,72 @@
+export const teamMembers = [
+    {
+     name: "Oleksandr Chernenko",
+position:"Team Lead",
+link:"https://github.com/zendr",
+img_jpg: "/oleksand_ch.jpg",
+img_webp:"/oleksandr_ch.webp",   
+    },
+    {
+     name:"Evgen Nechaev",
+position:"Scrum Master",
+link:"https://github.com/EvgNec",
+img_jpg: "/Evgen.jpg",
+img_webp:"/Evgen.webp",  
+    },
+        {
+     name:"Mariia Huziuk",
+position:"Developer",
+link:"https://github.com/maryhuziuk",
+img_jpg: "/Mariia.jpg",
+img_webp:"/Mariia.webp",   
+    },
+        {
+     name:"Artem Shapoval",
+position:"Developer",
+link:"https://github.com/TyomaShapoval",
+img_jpg: "/Artem.jpg",
+img_webp:"/Artem.webp",   
+    },
+        {
+     name:"Uliana Grynyshyn",
+position:"Developer",
+link:"https://github.com/Uliana2022ua",
+img_jpg: "/Uliana.jpg",
+img_webp:"/Uliana.webp",   
+    },
+        {
+     name:"Karina Tkachenko",
+position:"Developer",
+link:"https://github.com/Karina-98",
+img_jpg: "/Karina.jpg",
+img_webp:"/Karina.webp",     
+    },
+        {
+     name:"Pavlo Ponomarenko",
+position:"Developer",
+link:"https://github.com/PaulPonomarenko",
+img_jpg: "/Pavlo.jpg",
+img_webp:"/Pavlo.webp",    
+    },
+        {
+     name:"Viktor Yakymenko",
+position:"Developer",
+link:"https://github.com/chell-iz-naroda",
+img_jpg: "/Viktor.jpg",
+img_webp:"/Viktor.webp",    
+    },
+        {
+     name:"Oleksandr Piniugin",
+position:"Developer",
+link:"https://github.com/Piniuhin",
+img_jpg: "/Oleksandr_Pin.jpg",
+img_webp:"/Oleksandr_Pin.webp",   
+    },
+        {
+     name:"Maksym Karpiuk",
+position:"Developer",
+link:"https://github.com/Konoplya156",
+img_jpg: "/Maksym.jpg",
+img_webp:"/Maksum.webp",     
+    }
+]
