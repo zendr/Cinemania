@@ -122,6 +122,43 @@ display: none;
         }
     }
 }
+
+
+
+
+
+
+
+
+.hero_box1-light {
+display: none;
+@media screen and(min-width: 768px) {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    width: 768px;
+    height: 432px;
+    left: 0;
+    background-color: #FFFFFF;
+    background: url(./../images/header/SubtractTabLight.png);
+    background-position: 30px;
+}
+@media screen and(min-width: 1280px){
+    background: url(./../images/header/SubtractPcLight.png);
+    width: 1280px;
+    height: 720px;
+    background-position: 60px;
+}
+}
+
+
+
+
+
+
+
+
 .hero_title-box {
     width: 199px;
     height: 114px;
