@@ -7,7 +7,7 @@ export default {
   async getTrendData(page) {
     try {
       const { data } = await axios.get(
-        `${TREND_URL}?api_key=${API_KEY}&page=${page}`,
+        `${TREND_URL}?api_key=${API_KEY}&page=${page}`
       );
 
       return data;
@@ -20,7 +20,7 @@ export default {
   async fetchMovieSearcher(text, page) {
     try {
       const { data } = await axios.get(
-        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`,
+        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`
       );
 
       return data;
