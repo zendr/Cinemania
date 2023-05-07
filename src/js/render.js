@@ -62,7 +62,7 @@ export function createListMarkup(data) {
           } else {
             posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
           }
-          return `<li class='cards-list__item'>
+          return `<li class='cards-list__item' data-id='${id}'>
             <img
               class='cards-list__img'
               src='${posterPath}'
