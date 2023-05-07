@@ -1,0 +1,270 @@
+.container.container__upcoming {
+  @media screen and (min-width: 320px) {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+  }
+  @include respond-min('tablets') {
+    margin-left: 32px;
+    margin-right: 32px;
+    padding: 0;
+  }
+  @include respond-min('pc') {
+    display: flex;
+  }
+}
+
+.upcoming__card {
+  @include respond-min('pc') {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.upcoming__title {
+  @media screen and (min-width: 320px) {
+    @include font(16, 500, 19);
+    margin-top: 32px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: start;
+    color: var(--white-color);
+  }
+  @include respond-min('tablets') {
+    @include font(24, 500, 28);
+  }
+  @include respond-min('pc') {
+    @include font(28, 500, 33);
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+}
+.upcoming__thumb {
+  @media screen and (min-width: 320px) {
+    width: 280px;
+    height: 402px;
+    padding: 0;
+    margin: 0;
+  }
+
+  @include respond-min('tablets') {
+    width: 700px;
+    height: 400px;
+  }
+  @include respond-min('pc') {
+    width: 805px;
+    height: 490px;
+    margin-top: 28px;
+  }
+}
+
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  // object-position: 20% 0px;
+}
+
+.upcoming__info {
+  @include respond-min('pc') {
+    width: 350px;
+    margin-left: 16px;
+    padding-right: 37px;
+  }
+}
+.upcoming__info--title {
+  @include respond-min('phone') {
+    @include font(20, 500, 23);
+    margin-top: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: start;
+    color: var(--white-color);
+  }
+
+  @include respond-min('tablets') {
+    @include font(28, 500, 33);
+    margin-bottom: 24px;
+    margin-top: 32px;
+  }
+
+  @include respond-min('pc') {
+    @include font(32, 500, 38);
+    padding-top: 61px;
+    margin-top: 60px;
+  }
+}
+
+.upcoming__info--about {
+  @include font(16, 500, 19);
+  margin-top: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--light-grey-color);
+
+  @include respond-min('tablets') {
+    margin-top: 8px;
+  }
+}
+
+p {
+  @include font(16, 500, 19);
+  color: var(--light-grey-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.upcoming__info--description {
+  @include font(14, 400, 20);
+  color: var(--s-light-gray-color);
+  margin-top: 16px;
+  margin-bottom: 20px;
+  width: 280px;
+  @include respond-min('tablets') {
+    width: 630px;
+  }
+  @include respond-min('pc') {
+    width: 340px;
+  }
+}
+
+.upcoming__info--release {
+  @include respond-min('phone') {
+    display: flex;
+  }
+}
+
+.upcoming__info--release--date {
+  @media screen and (min-width: 320px) {
+    text-transform: uppercase;
+    color: #f87719;
+    margin-left: 57px;
+  }
+}
+.upcoming__info--genre {
+  @include respond-min('tablets') {
+  }
+}
+
+.upcoming__info--vote {
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: flex-start;
+  }
+  @include respond-min('tablets') {
+    display: flex;
+  }
+}
+
+.upcoming__info--votes {
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: center;
+    margin-left: 65px;
+  }
+}
+
+.upcoming__info--pop {
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.upcoming__info--pop--range {
+  @media screen and (min-width: 320px) {
+    @include font(16, 500, 19);
+    margin-left: 77px;
+    text-transform: uppercase;
+    color: var(--white-color);
+  }
+}
+
+.upcoming__info--white {
+  @include font(14, 500, 16);
+  padding: 1px 8px;
+  display: flex;
+  text-transform: uppercase;
+  color: var(--black-color);
+  background: var(--white-color);
+  border-radius: 5px;
+}
+
+.slash {
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.upcoming__info--genre--kind {
+  margin-left: 107px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.upcoming__movie {
+  @include respond-min('tablets') {
+    display: flex;
+  }
+  @include respond-min('pc') {
+    display: block;
+  }
+}
+.upcoming__info--left {
+  @include respond-min('tablets') {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.upcoming__info--right {
+  @include respond-min('tablets') {
+    display: flex;
+    flex-direction: column;
+    margin-left: 130px;
+  }
+  @include respond-min('pc') {
+    margin-left: 0;
+  }
+}
+
+.upcoming__remindme--btn {
+  @media screen and (min-width: 320px) {
+    @include font(12, 500, 14);
+    letter-spacing: 0;
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 110px;
+    height: 40px;
+    border: none;
+    padding: 12px 24px;
+    background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+    border-radius: 74px;
+  }
+
+  @include respond-min('tablets') {
+    @include font(14, 500, 16);
+    letter-spacing: 0;
+    width: 120px;
+    height: 40px;
+  }
+
+  @include respond-min('pc') {
+    @include font(14, 500, 16);
+    letter-spacing: 0;
+    width: 120px;
+    height: 40px;
+  }
+}

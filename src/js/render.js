@@ -44,6 +44,8 @@ export function renderMarkup(data) {
   });
 }
 
+import { addMovieToLibrary } from './my-library';
+
 export function createListMarkup(data) {
   if (data) {
     return data
@@ -62,13 +64,14 @@ export function createListMarkup(data) {
           } else {
             posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
           }
-          return `<li class='cards-list__item' key='${id}'>
+          return `<li class='cards-list__item' data-id='${id}'>
             <img
               class='cards-list__img'
               src='${posterPath}'
               alt='${original_title}'
               width
               loading='lazy'
+              data-id='${id}'
             />
             <div class='cards-list__wrap'>
               <div class='cards-list__info'>

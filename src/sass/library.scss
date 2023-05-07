@@ -131,6 +131,8 @@
 }
 
 .library-empty__mistake {
+  display: flex;
+  justify-content: center;
   color: var(--white-color);
   @include font(20, 400, 28);
   text-align: center;

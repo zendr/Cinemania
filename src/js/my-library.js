@@ -1,4 +1,5 @@
 import { createListMarkup } from './render';
+import { getMovieById2 } from './api-service';
 
 const librariesKey = 'libraries';
 let page = 1;
@@ -17,24 +18,32 @@ if (refs.loadMoreButton) {
   });
 }
 
-export function addMovieToLibrary(film) {
+export function addMovieToLibrary(movieId) {
+  getMovieById2(movieId).then(movie => {
+    movie.genre_names = movie.genres
+      .map(genre => {
+        return genre.name;
+      })
+      .slice(0, 2)
+      .join(',');
+    let libraries = JSON.parse(localStorage.getItem(librariesKey));
+    if (!libraries) {
+      libraries = {};
+    }
+    libraries[movie.id] = movie;
+    localStorage.setItem(librariesKey, JSON.stringify(libraries));
+  });
+}
+
+export function removeMovieFromLibrary(movieId) {
   let libraries = JSON.parse(localStorage.getItem(librariesKey));
-  if (!libraries) {
-    libraries = {};
-  }
-  libraries[film.id] = film;
+  delete libraries[movieId];
   localStorage.setItem(librariesKey, JSON.stringify(libraries));
 }
 
-export function removeMovieFromLibrary(filmId) {
-  let libraries = JSON.parse(localStorage.getItem(librariesKey));
-  delete libraries[filmId];
-  localStorage.setItem(librariesKey, JSON.stringify(libraries));
-}
-
-export function getMovieFromLibrary(filmId) {
+export function getMovieFromLibrary(movieId) {
   const libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
-  return libraries[filmId];
+  return libraries[movieId];
 }
 
 function getMoviesFromLibrary() {
@@ -45,8 +54,14 @@ function getMoviesFromLibrary() {
 export function renderLibraryData() {
   let movieMarkup = renderMovies();
   if (!movieMarkup) {
-    movieMarkup = `<p class="library-empty__mistake">OOPS... <br> We are very sorry! <br> You don't have any movies at your library.</p>
-    <button class="library-empty__btn">Search movie </button>`;
+    movieMarkup = `
+    <div class="container">
+      <p class="library-empty__mistake">OOPS... <br> We are very sorry! <br> You don't have any movies at your library.</p>
+      <button class="library-empty__btn">Search movie </button>
+    </div>
+      `;
+  } else {
+    movieMarkup = `<div class="cards__list">${movieMarkup}</div>`;
   }
   refs.libraryList.innerHTML = movieMarkup;
 }
@@ -59,10 +74,7 @@ function renderMovies() {
   }
 
   let movies = allMovies.slice(0, page * perPage);
-  movies.map(movie => {
-    movie.genre_names = movie.genre_ids.join(', ');
-    return movie;
-  });
+
   const markup = createListMarkup(movies);
 
   refs.loadMoreButton.style = 'display: none;';
