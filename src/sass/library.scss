@@ -61,17 +61,14 @@
   background-size: cover;
   margin-bottom: 40px;
 
+  @include respond-min('phone') {
+    max-height: 380px;
+  }
   @include respond-min('tablets') {
     max-height: 432px;
-    background-position: center;
-    background-position-x: 103px;
-    background-position-y: -84px;
   }
   @include respond-min('pc') {
     max-height: 720px;
-    background-position: top right;
-    background-position-x: 163px;
-    background-position-y: -84px;
   }
 }
 
@@ -83,11 +80,27 @@
   }
 }
 
+// фон телефон
+@include respond-min('phone') {
+  .library-hero {
+    background-image: url(../images/library_foto/HeroTabletLib.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .library-hero {
+      background-image: url(../images/library_foto/HeroTabletLib2x.jpg);
+    }
+  }
+}
+
 //  таблет фон
 
 @include respond-min('tablets') {
   .library-hero {
-    background-image: url(../images/library_foto/library2xphone.jpg);
+    background-image: url(../images/library_foto/HeroTabletLib.jpg);
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -118,6 +131,8 @@
 }
 
 .library-empty__mistake {
+  display: flex;
+  justify-content: center;
   color: var(--white-color);
   @include font(20, 400, 28);
   text-align: center;

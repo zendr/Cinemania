@@ -44,6 +44,8 @@ export function renderMarkup(data) {
   });
 }
 
+import { addMovieToLibrary } from './my-library';
+
 export function createListMarkup(data) {
   if (data) {
     return data
