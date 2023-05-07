@@ -51,8 +51,11 @@ import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 export const getMovieById2 = async id => {
       try {
-  const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
-  return data;
+        const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
+             const result = {
+                 ... data,
+      };
+  return result;
       } catch (error) {
       console.error('Smth wrong with api ID fetch' + error);
     }
