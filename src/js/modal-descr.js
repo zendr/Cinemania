@@ -11,7 +11,7 @@ import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary } from '
 
 let posterPath = '';
 let genresList = [];
-let filmMarkup = 
+let filmMarkup = '';
 
 //обява перемінних
 const refs = {
@@ -125,7 +125,7 @@ function createFilmMarkup(data) {
     // console.log(filmMarkup);
   })
 
-};
+;
 
 
 
