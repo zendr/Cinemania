@@ -3,7 +3,7 @@ import Pagination from 'tui-pagination';
 
 const container = document.getElementById('tui-pagination-container');
 const options = {
-  totalItems: 5000,
+  totalItems: 20000,
   itemsPerPage: 20,
   visiblePages: 4,
   page: 1,
