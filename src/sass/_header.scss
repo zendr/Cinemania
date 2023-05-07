@@ -207,3 +207,28 @@ transition: color 300ms;
     color: #F87719;
 }
 }
+.theme_sunshine {
+    background-color: #fff;
+    .menu, .nav-mob, .nav, .nav_list, .nav_list-mob {
+        color: #000;
+        &:hover{
+            color: var(--accent-color);
+        }
+        .logo_text {
+            color: #000;
+        }
+    }
+    @media screen and(min-width:768px) {
+        .hero_first-title, .hero_page-box2 {
+            color: #000;
+        }
+    }
+    @media screen and(max-width:767.27px) {
+        .hero_first-title {
+            color: #fff;
+        }
+        .blind {
+            background-color: #fff;
+        }
+    }
+}

@@ -25,6 +25,7 @@ export async function fetchMovieSearcher(text, page) {
     if (page === 1) {
       pagination.reset(data.total_results);
     }
+
     return data;
   } catch (error) {
     console.error('Smth wrong with api search fetch' + error);
@@ -47,3 +48,15 @@ export async function getMovieById(id) {
     console.error('Smth wrong with api ID fetch' + error);
   }
 }
+
+};
+  
+
+export const getMovieById2 = async id => {
+      try {
+  const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
+  return data;
+      } catch (error) {
+      console.error('Smth wrong with api ID fetch' + error);
+    }
+};
