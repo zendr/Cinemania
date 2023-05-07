@@ -1,4 +1,4 @@
-import { moviesDataUpdate, saveLs, removeLs } from './storage';
+import { moviesDataUpdate, saveLs } from './storage';
 import { fetchMovieSearcher } from './api-service';
 import { renderMarkup } from './render';
 import { form } from './refs';
@@ -31,6 +31,7 @@ function search(event) {
     } else {
       searchFilms = false;
       renderMarkup(data);
+      saveLs('totalItems', data.total_results);
       form.reset();
     }
   });
