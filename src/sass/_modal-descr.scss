@@ -1,3 +1,21 @@
+
+.backdrop {
+  position: fixed;
+  background-color: rgba(24, 23, 23, 0.767);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  z-index: 1;
+  overflow: auto;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1000ms linear, visibility 300ms linear;
+  }
+}
 .modal__container {
   overflow-x: auto;
   z-index: 99;
@@ -22,11 +40,24 @@
   }
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
+  // background-color: var(--black-color);
+  background-color: var(--grey-color);
+  @include font(24, 500, 32, 0);
+  font-family: var(--main-font);
+  color: var(--white-color);
+  max-height: 100vh;
+  padding: 52px 16px 52px 16px;
+  border-radius: 16px;
+  min-width: 280px;
+  height: 847px;
+
+  @include respond-min('tablets') {
     display: flex;
     margin: auto;
     width: 704px;
     padding: 40px 36px 40px 36px;
   }
+
   @media screen and (min-width: 1024px) {
     display: flex;
     min-width: 806px;
@@ -34,6 +65,62 @@
     padding: 40px 12px 40px 12px;
   }
 }
+  @include respond-min('pc') {
+    display: flex;
+    min-width: 846px;
+    height: 598px;
+    padding: 60px;
+  }
+}
+
+.film-list__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.film-list__img {
+  max-width: 100%;
+  height: auto;
+  & img {
+    border-radius: 5px;
+    width: 248px;
+    height: 315px;
+    @include respond-min('phone') {
+      width: 248px;
+      height: 315px;
+    }
+    @include respond-min('tablets') {
+      width: 294px;
+      height: 400px;
+    }
+    @include respond-min('pc') {
+      width: 375px;
+      height: 478px;
+      box-shadow: 1px 1px 24px 2px rgba(1, 1, 1, 0.45);
+    }
+  }
+}
+
+.film-list__info {
+  & .film-list__title {
+    @include font(20, 500, 23, 0);
+    color: var(--white-color);
+    @include respond-min('phone') {
+    }
+    @include respond-min('tablets') {
+      @include font(24, 500, 28, 0);
+    }
+    @include respond-min('pc') {
+      @include font(24, 500, 32, 0);
+    }
+  }
+  & div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .image {
   display: block;
   max-width: 240px;
