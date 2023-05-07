@@ -1,26 +1,67 @@
-.cards{
 
-    margin-bottom: 22px;
-
-    @include respond-min('tablets') {
-        margin-bottom: 44px;
-    }
-    @include respond-min('pc') {
-        margin-bottom: 60px;
-    }
-
-
+.weekly__trends-all{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  
+    
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        margin-top: 40px;
+    @media screen and (min-width: 768px) {
+         max-top: 52px;   
+        }
+    
+        @media screen and (min-width:1200px) {
+           margin-top: 80px;
+           margin-bottom: 28px;
+        }
 }
- 
-.cards__list {
-    display: grid;
+
+.weekly-trends{
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 19px;
+        @media screen and (min-width: 768px) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        
+            @media screen and (min-width:1200px) {
+                font-size: 28px;
+                line-height: 33px;
+            }
+        
+}
+
+.see-all{ 
+        color: #F87719;
+    font-size: 16px;
+    line-height: 19px;
+    @media screen and (min-width: 768px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    
+        @media screen and (min-width:1200px) {
+            font-size: 28px;
+            line-height: 33px;
+        }
+        
+}
+
+// ul
+.gallery-weekly__list{
+display: grid;
     max-width: calc(320px - 40px);
     grid-template-columns: repeat(1, minmax(280px, 1fr));
     grid-row-gap: 16px;
     margin: 0 auto;
     list-style: none;
     justify-content: center;
-    
+
     position: relative;
 
 
@@ -32,6 +73,7 @@
         grid-row-gap: 28px;
 
     }
+
     @include respond-min('pc') {
         max-width: calc(1280px - 64px);
         grid-template-columns: repeat(3, minmax(395px, 1fr));
@@ -40,26 +82,29 @@
     }
 }
 
-.cards-list__item {
-    display: flex;
+// li
+
+.gallery-weekly__list-elem{
+display: flex;
     flex-direction: column;
     position: relative;
     height: 406px;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 10px;
     cursor: pointer;
-
+    border-radius: 5px;
     z-index: 0;
 
     @include respond-min('tablets') {
         height: 325px;
     }
+
     @include respond-min('pc') {
         height: 574px;
     }
 }
 
-.cards-list__item::before {
+.gallery-weekly__list-elem::before {
     position: absolute;
     content: " ";
     background: var(--background-cards);
@@ -68,17 +113,18 @@
     width: 100%;
     height: 100%;
     display: block;
-    border-radius: inherit;
+    
     z-index: 1;
 }
 
-.cards-list__item:hover {
+.gallery-weekly__list-elem:hover {
     transform: scale(1.02) translateZ(0);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 20px var(--accent-color);
+    
 }
 
-.cards-list__wrap {
+.gallery-weekly__info {
     display: flex;
     align-items: baseline;
 
@@ -97,42 +143,44 @@
     @include respond-min('tablets') {
         width: 224px;
     }
+
     @include respond-min('pc') {
         width: 395px;
     }
 }
 
-.cards-list__img {
-    border-radius: inherit;
+.gallery-weekly__link {
     height: 406px;
+
     @include respond-min('tablets') {
         height: 325px;
     }
+
     @include respond-min('pc') {
         height: 574px;
     }
+
     box-shadow: 0px 3px 4px 1px rgba(44, 133, 200, 0.2);
 }
 
-.cards-list__info {
-    max-width: 90%;
-}
-
-.cards-list__title {
+.gallery-weekly__title {
     font-size: 12px;
     line-height: 1.5;
     text-transform: uppercase;
     overflow: hidden;
     color: var(--white-color);
+
     @include respond-min('tablets') {
         line-height: 1.2;
     }
+
     @include respond-min('pc') {
         font-size: 20px;
         line-height: 1.67;
     }
 }
-.cards-list__text {
+
+.gallery-weekly__text {
     font-size: 12px;
     line-height: 1.5;
     overflow: hidden;
@@ -144,8 +192,12 @@
     }
 }
 
-.cards-list__rate {
-    color: var(--light-grey-color);
+.gallery-weekly__info{
+max-width: 90%;
+}
+
+.gallery-weekly__rate{
+   color: var(--light-grey-color);
     margin-top: auto;
     margin-left: auto;
 
@@ -158,6 +210,9 @@
     @include respond-min('pc') {
         font-size: 20px;
         line-height: 1.2;
-        
+
     }
 }
+
+
+
