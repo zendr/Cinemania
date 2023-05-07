@@ -9,9 +9,6 @@ let searchPage = 1;
 let query = '';
 let searchFilms = true;
 
-let searchPage = 1;
-const query = '';
-
 if (form) {
   form.addEventListener('submit', search);
 }
