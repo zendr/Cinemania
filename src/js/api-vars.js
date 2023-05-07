@@ -4,7 +4,7 @@ const TREND_URL = `${BASE_URL}/trending/movie/week`;
 const SEARCH_URL = `${BASE_URL}/search/movie`;
 const ID_URL = `${BASE_URL}/movie/`;
 
-
+const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 const IMG_BASE_URL = `https://image.tmdb.org/t/p`;
 const IMG_W400 = `/w400`;
 
