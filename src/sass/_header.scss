@@ -209,8 +209,14 @@ transition: color 300ms;
 }
 .theme_sunshine {
     background-color: #fff;
-    .menu, .logo_text, .nav-mob, .nav, .nav_list {
+    .menu, .nav-mob, .nav, .nav_list, .nav_list-mob {
         color: #000;
+        &:hover{
+            color: var(--accent-color);
+        }
+        .logo_text {
+            color: #000;
+        }
     }
     @media screen and(min-width:768px) {
         .hero_first-title, .hero_page-box2 {
@@ -220,6 +226,9 @@ transition: color 300ms;
     @media screen and(max-width:767.27px) {
         .hero_first-title {
             color: #fff;
+        }
+        .blind {
+            background-color: #fff;
         }
     }
 }
