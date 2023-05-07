@@ -11,4 +11,6 @@ import './js/trandings';
 import './js/my-library';
 import './js/pagination';
 import './js/header'
+import './js/btn-up';
+import './js/weekly';
 
