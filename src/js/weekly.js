@@ -95,7 +95,7 @@ function createMarkup(results) {
       posterIMG = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
     }
     return  ` <li class='gallery-weekly__list-elem'  data-id='${id}'>           
-        <a class='gallery-weekly__link' href="${poster_path}"><img class='gallery-weekly__image ' src="${posterIMG}" alt="" loading="lazy" data-id='${id}'></a>
+      <img class='gallery-weekly__image ' src="${posterIMG}" alt="" loading="lazy" data-id='${id}'>
        <div class='gallery-weekly__all-info'> 
         <div class="gallery-weekly__info">
             <h3 class= 'gallery-weekly__title'>${original_title}</h3>

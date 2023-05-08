@@ -52,6 +52,12 @@
         
 }
 
+.see-all:hover{
+    transform: scale(1.12) translateZ(0);
+    transition: all 0.4s cubic-bezier(.17, .67, .83, .67);
+
+}
+
 // ul
 .gallery-weekly__list{
 display: grid;
