@@ -111,13 +111,13 @@
   }
 }
 
-p {
-  @include font(16, 500, 19);
-  color: var(--light-grey-color);
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-}
+//p {
+  //@include font(16, 500, 19);
+  //color: var(--light-grey-color);
+  //display: flex;
+  //align-items: center;
+  //margin-bottom: 12px;
+//}
 
 .upcoming__info--description {
   @include font(14, 400, 20);
