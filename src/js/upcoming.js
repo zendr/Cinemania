@@ -1,46 +1,64 @@
 import Notiflix from 'notiflix';
 import axios from 'axios';
-import { API_KEY, BASE_URL, TREND_URL, SEARCH_URL, ID_URL, IMG_BASE_URL, IMG_W400 } from './api-vars';
+import {
+  API_KEY,
+  BASE_URL,
+  TREND_URL,
+  SEARCH_URL,
+  ID_URL,
+  IMG_BASE_URL,
+  IMG_W400,
+} from './api-vars';
 
 const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 
 const upcomingBlock = document.querySelector('.container__upcoming');
 
-// FETCH FOR UPCOMIG MOVIES 
-    
-    function fetchUpcomingMovies() {
- https://developers.themoviedb.org/3/movies/get-upcoming
+// FETCH FOR UPCOMIG MOVIES
 
-    return fetch(`${UPCOMING_URL}?api_key=${API_KEY}&language=en-US&page=1`)
-    . then(movieData => {
+function fetchUpcomingMovies() {
+  //developers.themoviedb.org/3/movies/get-upcoming
 
-        if  (! movieData. ok) {
-            throw  new  Error(movieData. status)
-          }
-        return  movieData. json()
-       
-      })
+  https: return fetch(
+    `${UPCOMING_URL}?api_key=${API_KEY}&language=en-US&page=1`
+  ).then(movieData => {
+    if (!movieData.ok) {
+      throw new Error(movieData.status);
+    }
+    return movieData.json();
+  });
 }
 
 async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
-    const  returnedResult  =  data. results;
-     console.log(returnedResult);
+    const returnedResult = data.results;
+    console.log(returnedResult);
 
-    if  (returnedResult. length  >=  1) {
-        const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
-        const  genreNames  =  await  getGenresById(randomMovie. genre_ids);
-      const  createdMarkup  =  await  renderMarkup({ ... randomMovie, genreNames });
-      upcomingBlock. insertAdjacentHTML('beforeend',  createdMarkup);
+    if (returnedResult.length >= 1) {
+      const randomMovie =
+        returnedResult[Math.floor(Math.random() * returnedResult.length)];
+      const genreNames = await getGenresById(randomMovie.genre_ids);
+      const createdMarkup = await renderMarkup({ ...randomMovie, genreNames });
+      upcomingBlock.insertAdjacentHTML('beforeend', createdMarkup);
     }
   } catch (error) {
-    console. log(error);
+    console.log(error);
   }
 }
-getFetchedMovies()
+getFetchedMovies();
 
-async function renderMarkup({ poster_path, backdrop_path, title, overview, popularity, vote_average, vote_count, release_date, genre_ids}) {
+async function renderMarkup({
+  poster_path,
+  backdrop_path,
+  title,
+  overview,
+  popularity,
+  vote_average,
+  vote_count,
+  release_date,
+  genre_ids,
+}) {
   const genreNames = await getGenresById(genre_ids);
 
   return `
@@ -101,12 +119,10 @@ async function getGenresById(genreIds) {
   const response = await fetch(`${BASE_URL}?api_key=${API_KEY}&language=en-US`);
   const data = await response.json();
 
-  const genreNames = genreIds.map((genreId) => {
-    const genre = data.genres.find((genre) => genre.id === genreId);
+  const genreNames = genreIds.map(genreId => {
+    const genre = data.genres.find(genre => genre.id === genreId);
     return genre.name;
   });
 
   return genreNames.join(', ');
 }
-
-
