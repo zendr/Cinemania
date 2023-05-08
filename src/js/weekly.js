@@ -87,8 +87,7 @@ function renderMarkup(results) {
 
 function createMarkup(results) {
   console.log(results);
-  return results.slice(0, 3).map(({ original_title, release_date, genre_ids, poster_path, vote_average, id
-  }) => {
+  return results.slice(0, 3).map(({ original_title, release_date, genre_ids, poster_path, vote_average, id}) => {
     let posterIMG = ``;
     if (poster_path) {
       posterIMG = `${IMG_BASE_URL}${IMG_W400}${poster_path}`;
@@ -107,6 +106,7 @@ function createMarkup(results) {
       starIcons += `<span class="fa star ${starClass}"> </span>`;
     }
     return  ` <li class='gallery-weekly__list-elem' data-id='${id}>           
+
         <a class='gallery-weekly__link' href="${poster_path}"><img class='gallery-weekly__image ' src="${posterIMG}" alt="" loading="lazy" data-id='${id}'></a>
        <div class='gallery-weekly__all-info'> 
         <div class="gallery-weekly__info">
