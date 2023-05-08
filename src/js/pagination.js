@@ -1,9 +1,9 @@
 import Pagination from 'tui-pagination';
-import { moviesDataUpdate, saveLs, loadLs } from './storage';
+import { loadLs } from './storage';
 
 const container = document.getElementById('tui-pagination-container');
 const options = {
-  totalItems: loadLs('totalItems'),
+  totalItems: 20000,
   itemsPerPage: 20,
   visiblePages: 4,
   page: 1,
@@ -26,8 +26,4 @@ const options = {
       '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">...</a>',
   },
 };
-// export function returnPagination() {
-//   const pagination = new Pagination(container, options);
-//   return pagination;
-// };
 export const pagination = new Pagination(container, options);

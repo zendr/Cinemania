@@ -8,6 +8,7 @@ import { getTrendData } from './api-service';
 let searchPage = 1;
 let query = '';
 let searchFilms = true;
+let totalItems = 0;
 
 if (form) {
   form.addEventListener('submit', search);
@@ -22,6 +23,7 @@ function search(event) {
   } else {
     form.reset();
   }
+
   fetchMovieSearcher(query, searchPage).then(data => {
     moviesDataUpdate(data);
     if (data.results.length < 1 || query === '') {
@@ -30,12 +32,17 @@ function search(event) {
       saveLs('query-pg', query);
     } else {
       searchFilms = false;
+      totalItems = data.total_results;
+      pagination._options.totalItems = totalItems;
+      // console.log(pagination);
       renderMarkup(data);
-      saveLs('totalItems', data.total_results);
+      // saveLs('totalItems', data.total_results);
       form.reset();
+      pagination.reset();
     }
   });
 }
+
 pagination.on('afterMove', event => {
   const currentPage = event.page;
   if (searchFilms) {
@@ -56,4 +63,4 @@ pagination.on('afterMove', event => {
       }
     });
   }
-});
+})

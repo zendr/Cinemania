@@ -9,52 +9,54 @@ let posterPath = '';
 let genresList = [];
 let filmMarkup = '';
 
+// 
+// Это Виктор, я button type="button" class="film__button btn__watch btn__watch__remove">Add to my library</button> вынес с рендера в html, теперь всё начало рабоат
+// 
 //обява перемінних
 const refs = {
-    openModal: document.querySelector('.films'),
-    closeModal: document.querySelector('.modal__close-btn'),
-    Backdrop: document.querySelector('.backdrop'),
-    ModalCont: document.querySelector('.modal__container'),
-    cardsfilm: document.querySelector('.cards-film'),
-    FilmBtn: document.querySelector('.film__button'),
+  openModal: document.querySelector('.films'),
+  closeModal: document.querySelector('.modal__close-btn'),
+  Backdrop: document.querySelector('.backdrop'),
+  ModalCont: document.querySelector('.modal__container'),
+  cardsfilm: document.querySelector('.cards-film'),
+  FilmBtn: document.querySelector('.film__button'),
 };
 
 //додавання слухачів
-refs.openModal.addEventListener('click', openModalDescr);
-refs.closeModal.addEventListener('click', closeModalDescr);
-refs.FilmBtn.addEventListener('click', AddToLibrary);
+  refs.openModal.addEventListener('click', openModalDescr);
+  refs.closeModal.addEventListener('click', closeModalDescr);
+  refs.FilmBtn.addEventListener('click', AddToLibrary);
 
 
 //відкривання модального вікна
 function openModalDescr(e) {
-    // console.log(e.target.nodeName);
-    // if (e.target.nodeName !== 'IMG') {
-    // return;
-    // }
-    refs.Backdrop.classList.remove('is-hidden');
-    refs.ModalCont.classList.remove('is-hidden');
+  // console.log(e.target.nodeName);
+  // if (e.target.nodeName !== 'IMG') {
+  // return;
+  // }
+  refs.Backdrop.classList.remove('is-hidden');
+  refs.ModalCont.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onEscBtnPress);
   document.addEventListener('click', onBackdropClick);
 
-    const filmID = e.target.dataset.id;
-    
-   createMarkup(filmID);
+  const filmID = e.target.dataset.id;
+
+  createMarkup(filmID);
 }
 
 
 //Додавання розмітки по фільму
 function createMarkup(filmID) {
-    const film = getMovieById2(filmID);
-   film.then(data => {console.log(data);});
-
+  const film = getMovieById2(filmID);
+  // film.then(data => { console.log(data); });
   return film.then(data => {
 
     const genres = data.genres;
     genres.forEach(genre => {
       genresList.push(genre.name);
     });
-      filmMarkup = createFilmMarkup(data);
+    filmMarkup = createFilmMarkup(data);
     refs.cardsfilm.innerHTML = filmMarkup;
     // console.log(filmMarkup);
   })
@@ -106,12 +108,13 @@ function createMarkup(filmID) {
 
 //додавання фільму у бібліотеку
 function AddToLibrary() {
-   console.log('in  AddToLibrary 1'); }
+  console.log('in  AddToLibrary 1');
+}
 
 
 //Функція закриття по ESC
 function onEscBtnPress(e) {
-    // console.log(e.code)
+  // console.log(e.code)
   if (e.code === 'Escape') {
     closeModalDescr();
   }
@@ -119,8 +122,8 @@ function onEscBtnPress(e) {
 
 //Функція закриття модалки поза межами модалки
 function onBackdropClick(e) {
-    // console.log(e.target);
-    // console.log(refs.Backdrop);
+  // console.log(e.target);
+  // console.log(refs.Backdrop);
   if (e.target === refs.Backdrop) {
     closeModalDescr();
   }
@@ -128,9 +131,9 @@ function onBackdropClick(e) {
 
 //закривання модального вікна
 function closeModalDescr(e) {
-    refs.Backdrop.classList.add('is-hidden');
-    refs.ModalCont.classList.add('is-hidden');
-      document.body.style.overflow = 'scroll';
+  refs.Backdrop.classList.add('is-hidden');
+  refs.ModalCont.classList.add('is-hidden');
+  document.body.style.overflow = 'scroll';
   document.removeEventListener('keydown', onEscBtnPress);
   document.removeEventListener('click', onBackdropClick);
 
@@ -152,8 +155,8 @@ function createFilmMarkup(data) {
       posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
     }
 
-      
-      return `<li class='film-list' data-id='${id}'>
+
+    return `<li class='film-list' data-id='${id}'>
           <ul class='film-list__list'>
           <li class='film-list__img'>
             <img
@@ -180,11 +183,8 @@ function createFilmMarkup(data) {
                 <p class='film-list__text'>ABOUT</p>
                 <p class='film-list__text'>${overview}</p>
               </li>
-                   <li class="film-list_btn">
-        <button type="button" class="film__button btn__watch btn__watch__remove">Add to my library</button>
-        </li>             
             </div>
             </ul>
-            </li>`;     
+            </li>`;
   }
 }

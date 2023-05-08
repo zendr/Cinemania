@@ -7,7 +7,7 @@ let searchPage = 1;
 
 getTrendData(searchPage).then((data) => {
 	renderMarkup(data);
-	saveLs('totalItems', data.total_results);
-	console.log(loadLs('totalItems'))
+	// saveLs('totalItems', data.total_results);
+	// console.log(loadLs('totalItems'))
 	saveLs("moviesData", data.results);
 });

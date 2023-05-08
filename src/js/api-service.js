@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { pagination } from './pagination';
-//import { createGenresFromID, createYear } from '../data/data-combine';
+// import { pagination } from './pagination';
 
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
@@ -23,7 +22,7 @@ export async function fetchMovieSearcher(text, page) {
       `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`
     );
     if (page === 1) {
-      pagination.reset(data.total_results);
+      // pagination.reset(data.total_results);
     }
 
     return data;
