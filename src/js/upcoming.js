@@ -9,6 +9,7 @@ import {
   IMG_BASE_URL,
   IMG_W400,
 } from './api-vars';
+import { addMovieToLibrary } from './my-library';
 
 const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 
@@ -29,6 +30,11 @@ function fetchUpcomingMovies() {
   });
 }
 
+function onClickRemind(event) {
+  const movieId = event.target.dataset.movieid;
+  addMovieToLibrary(movieId);
+}
+
 async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
@@ -41,6 +47,9 @@ async function getFetchedMovies() {
       const genreNames = await getGenresById(randomMovie.genre_ids);
       const createdMarkup = await renderMarkup({ ...randomMovie, genreNames });
       upcomingBlock.insertAdjacentHTML('beforeend', createdMarkup);
+      document
+        .querySelector('.upcoming__remindme--btn')
+        .addEventListener('click', onClickRemind);
     }
   } catch (error) {
     console.log(error);
@@ -49,6 +58,7 @@ async function getFetchedMovies() {
 getFetchedMovies();
 
 async function renderMarkup({
+  id,
   poster_path,
   backdrop_path,
   title,
@@ -104,8 +114,11 @@ async function renderMarkup({
             </div>
             <h2 class="upcoming__info--about">ABOUT</h2>
 
+Maria Huziuk, [08.05.2023 16:21]
+
+
             <p class="upcoming__info--description">${overview}</p>
-            <button class="upcoming__remindme--btn" type="button">Remind me</button>
+            <button class="upcoming__remindme--btn" data-movieid=${id}  type="button">Remind me</button>
         </div>
 
     </div>
