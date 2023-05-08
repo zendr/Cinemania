@@ -1,7 +1,6 @@
 import Notiflix from 'notiflix';
 import axios from 'axios';
-import { API_KEY, BASE_URL } from './api-vars';
-
+import { API_KEY, BASE_URL, TREND_URL, SEARCH_URL, ID_URL, IMG_BASE_URL, IMG_W400 } from './api-vars';
 
 const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 
@@ -23,18 +22,17 @@ const upcomingBlock = document.querySelector('.container__upcoming');
       })
 }
 
-
 async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
     const  returnedResult  =  data. results;
-    //  console.log(returnedResult);
+     console.log(returnedResult);
 
     if  (returnedResult. length  >=  1) {
-      //   const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
-      //   const  genreNames  =  await  getGenresById(randomMovie. genre_ids);
-      // const  createdMarkup  =  await  renderMarkup({ ... randomMovie, genreNames });
-      // upcomingBlock. insertAdjacentHTML('beforeend',  createdMarkup);
+        const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
+        const  genreNames  =  await  getGenresById(randomMovie. genre_ids);
+      const  createdMarkup  =  await  renderMarkup({ ... randomMovie, genreNames });
+      upcomingBlock. insertAdjacentHTML('beforeend',  createdMarkup);
     }
   } catch (error) {
     console. log(error);
@@ -43,7 +41,7 @@ async function getFetchedMovies() {
 getFetchedMovies()
 
 async function renderMarkup({ poster_path, backdrop_path, title, overview, popularity, vote_average, vote_count, release_date, genre_ids}) {
-  
+  const genreNames = await getGenresById(genre_ids);
 
   return `
     <div class="container container__upcoming">
@@ -65,10 +63,10 @@ async function renderMarkup({ poster_path, backdrop_path, title, overview, popul
             <div class="upcoming__movie">
                 <div class="upcoming__info--left">
                     <div class="upcoming__info--release">
-                        <p>Release date <span class="upcoming__info--release--date">${release_date}</span></p>
+                        <p class="upcoming__text">Release date <span class="upcoming__info--release--date">${release_date}</span></p>
                     </div>
                     <div class="upcoming__info--vote">
-                        <p>Vote/Votes
+                        <p class="upcoming__text">Vote/Votes
                         <div class="upcoming__info--votes"><span class="upcoming__info--white">${vote_average}</span> <span
                                 class="slash">/</span>
                             <span class="upcoming__info--white">
@@ -79,10 +77,10 @@ async function renderMarkup({ poster_path, backdrop_path, title, overview, popul
                 </div>
                 <div class="upcoming__info--right">
                     <div class="upcoming__info--pop">
-                        <p> Popularity <span class="upcoming__info--pop--range">${popularity}</span> </p>
+                        <p class="upcoming__text"> Popularity <span class="upcoming__info--pop--range">${popularity}</span> </p>
                     </div>
                     <div class="upcoming__info--genre">
-                        <p> Genre <span class="upcoming__info--genre--kind">${genreNames}</span> </p>
+                        <p class="upcoming__text"> Genre <span class="upcoming__info--genre--kind">${genreNames}</span> </p>
                     </div>
                 </div>
             </div>
@@ -96,8 +94,19 @@ async function renderMarkup({ poster_path, backdrop_path, title, overview, popul
      `;
 }
 
+async function getGenresById(genreIds) {
+  const API_KEY = '249f222afb1002186f4d88b2b5418b55';
+  const BASE_URL = `https://api.themoviedb.org/3/genre/movie/list`;
 
+  const response = await fetch(`${BASE_URL}?api_key=${API_KEY}&language=en-US`);
+  const data = await response.json();
 
+  const genreNames = genreIds.map((genreId) => {
+    const genre = data.genres.find((genre) => genre.id === genreId);
+    return genre.name;
+  });
 
+  return genreNames.join(', ');
+}
 
 

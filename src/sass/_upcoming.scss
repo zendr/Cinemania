@@ -4,11 +4,13 @@
     margin-right: 20px;
     padding: 0;
   }
+
   @include respond-min('tablets') {
     margin-left: 32px;
     margin-right: 32px;
     padding: 0;
   }
+
   @include respond-min('pc') {
     display: flex;
   }
@@ -30,9 +32,11 @@
     text-align: start;
     color: var(--white-color);
   }
+
   @include respond-min('tablets') {
     @include font(24, 500, 28);
   }
+
   @include respond-min('pc') {
     @include font(28, 500, 33);
     margin-top: 60px;
@@ -40,6 +44,7 @@
     padding-top: 0;
   }
 }
+
 .upcoming__thumb {
   @media screen and (min-width: 320px) {
     width: 280px;
@@ -52,20 +57,13 @@
     width: 700px;
     height: 400px;
   }
+
   @include respond-min('pc') {
     width: 805px;
     height: 490px;
     margin-top: 28px;
   }
 }
-
-//img {
-  //display: block;
-  //height: 100%;
-  //width: 100%;
-  //object-fit: cover;
-  // object-position: 20% 0px;
-//}
 
 .upcoming__info {
   @include respond-min('pc') {
@@ -74,8 +72,9 @@
     padding-right: 37px;
   }
 }
+
 .upcoming__info--title {
-  @include respond-min('phone') {
+  @media screen and (min-width: 320px) {
     @include font(20, 500, 23);
     margin-top: 24px;
     margin-bottom: 20px;
@@ -111,13 +110,13 @@
   }
 }
 
-//p {
-  //@include font(16, 500, 19);
-  //color: var(--light-grey-color);
-  //display: flex;
-  //align-items: center;
-  //margin-bottom: 12px;
-//}
+.upcoming__text {
+  @include font(16, 500, 19);
+  color: var(--light-grey-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
 
 .upcoming__info--description {
   @include font(14, 400, 20);
@@ -125,9 +124,11 @@
   margin-top: 16px;
   margin-bottom: 20px;
   width: 280px;
+
   @include respond-min('tablets') {
     width: 630px;
   }
+
   @include respond-min('pc') {
     width: 340px;
   }
@@ -146,9 +147,9 @@
     margin-left: 57px;
   }
 }
+
 .upcoming__info--genre {
-  @include respond-min('tablets') {
-  }
+  @include respond-min('tablets') {}
 }
 
 .upcoming__info--vote {
@@ -156,6 +157,7 @@
     display: flex;
     align-items: flex-start;
   }
+
   @include respond-min('tablets') {
     display: flex;
   }
@@ -216,22 +218,26 @@
   @include respond-min('tablets') {
     display: flex;
   }
+
   @include respond-min('pc') {
     display: block;
   }
 }
+
 .upcoming__info--left {
   @include respond-min('tablets') {
     display: flex;
     flex-direction: column;
   }
 }
+
 .upcoming__info--right {
   @include respond-min('tablets') {
     display: flex;
     flex-direction: column;
     margin-left: 130px;
   }
+
   @include respond-min('pc') {
     margin-left: 0;
   }
