@@ -162,6 +162,11 @@ display: flex;
     overflow: hidden;
     color: var(--light-grey-color);
 
+    @include respond-min('tablets') {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
     @include respond-min('pc') {
         font-size: 20px;
         line-height: 1.2;
@@ -169,7 +174,8 @@ display: flex;
 }
 
 .gallery-weekly__info{
-max-width: 90%;
+    max-width: 100%;
+    margin-right: -30%;
 }
 
 .gallery-weekly__rate{

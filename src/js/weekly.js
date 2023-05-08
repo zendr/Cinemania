@@ -115,10 +115,10 @@ function createMarkup(results) {
               <div class='cards-list__text'>
                 <p>${genre_ids} | ${release_date}</p>
               </div>
-              <div class='star-rate' style="font-size: 20px">
-                ${starIcons}
-              </div>
             </div>
+        </div>
+        <div class='star-rate'>
+                ${starIcons}
         </div>
       </div>
     </li>`
