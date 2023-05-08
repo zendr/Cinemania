@@ -94,14 +94,32 @@ function createMarkup(results) {
     } else {
       posterIMG = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
     }
-    return  ` <li class='gallery-weekly__list-elem'  data-id='${id}'>           
+
+    let starIcons = '';
+    for (let i = 1; i <= 5; i++) {
+      let starClass = 'fa-star-o';
+      if (i * 2 < vote_average) {
+        starClass = 'fa-star';
+      } else if (i * 2 - 1 < vote_average) {
+        starClass = 'fa-star-half-o';
+      }
+      starIcons += `<span class="fa star ${starClass}"> </span>`;
+    }
+    return  ` <li class='gallery-weekly__list-elem' data-id='${id}>           
+
         <a class='gallery-weekly__link' href="${poster_path}"><img class='gallery-weekly__image ' src="${posterIMG}" alt="" loading="lazy" data-id='${id}'></a>
        <div class='gallery-weekly__all-info'> 
         <div class="gallery-weekly__info">
             <h3 class= 'gallery-weekly__title'>${original_title}</h3>
-            <p class = 'gallery-weekly__text'> ${genre_ids} | ${release_date}</p>
+            <div class='cards-list_second_line'>
+              <div class='cards-list__text'>
+                <p>${genre_ids} | ${release_date}</p>
+              </div>
+              <div class='star-rate' style="font-size: 20px">
+                ${starIcons}
+              </div>
+            </div>
         </div>
-        <span class = 'gallery-weekly__rate'>${vote_average.toFixed(1)}</span>
       </div>
     </li>`
   }).join('') 

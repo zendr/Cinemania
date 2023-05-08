@@ -62,6 +62,18 @@ export function createListMarkup(data) {
           } else {
             posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
           }
+
+          let starIcons = '';
+          for (let i = 1; i <= 5; i++) {
+            let starClass = 'fa-star-o';
+            if (i * 2 < vote_average) {
+              starClass = 'fa-star';
+            } else if (i * 2 - 1 < vote_average) {
+              starClass = 'fa-star-half-o';
+            }
+            starIcons += `<span class="fa star ${starClass}"> </span>`;
+          }
+
           return `<li class='cards-list__item' data-id='${id}'>
             <img
               class='cards-list__img'
@@ -74,13 +86,21 @@ export function createListMarkup(data) {
             <div class='cards-list__wrap'>
               <div class='cards-list__info'>
                 <h2 class='cards-list__title'>${original_title}</h2>
-                <p class='cards-list__text'>${genre_names} | ${release_date}</p>
+                <div class='cards-list_second_line'>
+                  <div class='cards-list__text'>
+                    <p>${genre_names} | ${release_date}</p>
+                  </div>
+                  <div class='star-rate' style="font-size: 20px">
+                    ${starIcons}
+                  </div>
+                </div>
               </div>
-              <span class='cards-list__rate'>${vote_average.toFixed(1)}</span>
+                           
             </div>
             </li>
             `;
-        })
+        }
+      )
       .join('');
   }
 }
