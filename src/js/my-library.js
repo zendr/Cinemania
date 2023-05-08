@@ -61,7 +61,7 @@ export function renderLibraryData() {
     </div>
       `;
   } else {
-    movieMarkup = `<div class="cards__list">${movieMarkup}</div>`;
+    movieMarkup = `<ul class="cards__list films">${movieMarkup}</ul>`;
   }
   refs.libraryList.innerHTML = movieMarkup;
 }
