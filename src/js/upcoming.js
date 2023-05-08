@@ -1,5 +1,7 @@
 import Notiflix from 'notiflix';
 import axios from 'axios';
+import { API_KEY, BASE_URL } from './api-vars';
+
 
 const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 
@@ -26,13 +28,13 @@ async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
     const  returnedResult  =  data. results;
-     console.log(returnedResult);
+    //  console.log(returnedResult);
 
     if  (returnedResult. length  >=  1) {
-        const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
-        const  genreNames  =  await  getGenresById(randomMovie. genre_ids);
-      const  createdMarkup  =  await  renderMarkup({ ... randomMovie, genreNames });
-      upcomingBlock. insertAdjacentHTML('beforeend',  createdMarkup);
+      //   const randomMovie = returnedResult[Math.floor(Math.random() * returnedResult.length)];
+      //   const  genreNames  =  await  getGenresById(randomMovie. genre_ids);
+      // const  createdMarkup  =  await  renderMarkup({ ... randomMovie, genreNames });
+      // upcomingBlock. insertAdjacentHTML('beforeend',  createdMarkup);
     }
   } catch (error) {
     console. log(error);

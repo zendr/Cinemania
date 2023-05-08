@@ -9,7 +9,7 @@ const body = document.querySelector("body")
 const backImg = document.getElementById("hero_box1")
 const backColor = document.getElementById("hero_box2");
 const hero = document.querySelector(".hero");
-console.log(hero)
+// console.log(hero)
 
 function themeKit () {
     if (themeBtn.dataset.theme === "false") {

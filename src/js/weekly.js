@@ -24,7 +24,7 @@ async function getMovieGenres() {
 
 async function getGenres() {
     const genres = await getMovieGenres().then(({ genres }) => genres);
-    console.log(genres);
+    // console.log(genres);
   return { genres };
 }
 
@@ -58,11 +58,13 @@ async function getGenres() {
 // }
     
 
+// В createMarkup добавлен id и его вывод на карточку для работы модалки Евгения --- Виктор
 
 function createMarkup(results) {
-   const markup = results.slice(0, 3).map(({ original_title, release_date, genre_ids, poster_path, vote_average
+  // console.log(results);
+   const markup = results.slice(0, 3).map(({ original_title, release_date, genre_ids, poster_path, vote_average, id
     }) =>
-       ` <li class='gallery-weekly__list-elem '>           
+       ` <li class='gallery-weekly__list-elem' data-id='${id}>           
         <a class='gallery-weekly__link' href="${poster_path}"><img class='gallery-weekly__image ' src="https://image.tmdb.org/t/p/w400/${poster_path}" alt="" loading="lazy" ></a>
         <div class="gallery-weekly__info">
             <h3 class= 'gallery-weekly__title'>${original_title}</h3>
@@ -80,13 +82,13 @@ function createMarkup(results) {
 }
 
 getTrendData().then(({ results }) => {
-    console.log(results.genre_ids)
+    // console.log(results.genre_ids)
      return createMarkup(results);
    
 })
 
 export const getWeeklyTrends = getTrendData().then(({ results }) => {
-    console.log(results)
+    // console.log(results)
     return createMarkup(results);
 })
 
