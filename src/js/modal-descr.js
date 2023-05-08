@@ -72,7 +72,9 @@ async function createMarkup(filmID) {
   const film = getMovieById2(filmID);
   genresList = [];
   return film.then(data => {
+    console.log(data.genres);
     const genres = data.genres;
+    
     genres.forEach(genre => {
       genresList.push(` ${genre.name}`);
     });
