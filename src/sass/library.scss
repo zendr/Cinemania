@@ -1,7 +1,3 @@
-// .library {
-//   background-color: var(--black-color);
-// }
-
 .library-hero__title {
   @include font(32, 700, 38);
   display: flex;
@@ -154,7 +150,6 @@
   flex-direction: column;
 }
 .library-empty__btn {
-  // position: relative;
   margin-top: 16px;
   padding: 0;
   width: 121px;
