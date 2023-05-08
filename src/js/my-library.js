@@ -55,9 +55,9 @@ export function renderLibraryData() {
   let movieMarkup = renderMovies();
   if (!movieMarkup) {
     movieMarkup = `
-    <div class=" library-empty container">
+    <div class=" container">
       <p class="library-empty__mistake">OOPS... <br> We are very sorry! <br> You don't have any movies at your library.</p>
-      <button class="library-empty__btn" onclick="window.location.href='catalog.html'">Search movie </button>
+      <button class="btn-library" onclick="window.location.href='catalog.html'"><a class="btn-library__link">Search movie</a></button>
     </div>
       `;
   } else {
