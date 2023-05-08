@@ -140,25 +140,56 @@ function createFilmMarkup(data) {
             </li>
             <li class='film-list__info'>            
                 <h2 class='film-list__title'>${original_title}</h2>
-                <div>
-                <p class='film-list__title_text'>Vote / Votes</p>
-                <p class='film-list__text_average'>${vote_average} / ${vote_count}</p>
-                </div>
-                <div>
-                <p class='film-list__title_text'>Popularity</p>
-                <p class='film-list__text'>${popularity}</p>
-                </div>
-                <div>
-                <p class='film-list__title_text'>Genre</p>
-                <p class='film-list__text'>${genresList}</p>
+                <div class="film-list__char">
+                  <div class="film-list__title_text">
+                    <p>Vote / Votes</p>
+                    <p>Popularity</p>
+                    <p class='film-list__title_text'>Genre</p>
+                  </div>
+                  <div  class="film-list__title_char">
+                    <p class='film-list__text_average'><span  class='film-list__average'>${vote_average}</span>  /  <span  class='film-list__average'>${vote_count}</span></p>
+                    <p class='film-list__text'>${popularity}</p>
+                    <p class='film-list__text'>${genresList}</p>
+                  </div>
                 </div>
                 <div class='film-list__about'>
                 <p class='film-list__title_text-about'>ABOUT</p>
                 <p class='film-list__text-about'>${overview}</p>
                  </div>
-              </li>
-            </div>
-            </ul>
-            </li>`;
+            </li>
+          </ul>
+      </li>`;
+    // return `<li class='film-list' data-id='${id}'>
+    //       <ul class='film-list__list'>
+    //       <li class='film-list__img'>
+    //         <img
+    //           src='${posterPath}'
+    //           alt='${original_title}'
+    //           width
+    //           loading='lazy'
+    //         />
+    //         </li>
+    //         <li class='film-list__info'>            
+    //             <h2 class='film-list__title'>${original_title}</h2>
+    //             <div>
+    //             <p class='film-list__title_text'>Vote / Votes</p>
+    //             <p class='film-list__text_average'><span  class='film-list__average'>${vote_average}</span>  /  <span  class='film-list__average'>${vote_count}</span></p>
+    //             </div>
+    //             <div>
+    //             <p class='film-list__title_text'>Popularity</p>
+    //             <p class='film-list__text'>${popularity}</p>
+    //             </div>
+    //             <div>
+    //             <p class='film-list__title_text'>Genre</p>
+    //             <p class='film-list__text'>${genresList}</p>
+    //             </div>
+    //             <div class='film-list__about'>
+    //             <p class='film-list__title_text-about'>ABOUT</p>
+    //             <p class='film-list__text-about'>${overview}</p>
+    //              </div>
+    //           </li>
+    //         </div>
+    //         </ul>
+    //         </li>`;
   }
 }
