@@ -3,3 +3,4 @@ import './js/pagination';
 import './js/trandings';
 import './js/searchMovie';
 import './js/modal-descr';
+import './js/teamModal';
