@@ -13,6 +13,7 @@
 
   @include respond-min('pc') {
     display: flex;
+    justify-content: center;
   }
 }
 
@@ -59,7 +60,7 @@
   }
 
   @include respond-min('pc') {
-    width: 805px;
+    width: 780px;
     height: 490px;
     margin-top: 28px;
   }
@@ -67,7 +68,7 @@
 
 .upcoming__info {
   @include respond-min('pc') {
-    width: 350px;
+    // width: 350px;
     margin-left: 16px;
     padding-right: 37px;
   }
