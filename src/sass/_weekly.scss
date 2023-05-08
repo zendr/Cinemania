@@ -96,11 +96,11 @@ display: flex;
     z-index: 0;
 
     @include respond-min('tablets') {
-        height: 325px;
+        height: 336px;
     }
 
     @include respond-min('pc') {
-        height: 574px;
+        height: 593px;
     }
 }
 

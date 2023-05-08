@@ -59,13 +59,13 @@
   }
 }
 
-img {
-  display: block;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+//img {
+  //display: block;
+  //height: 100%;
+  //width: 100%;
+  //object-fit: cover;
   // object-position: 20% 0px;
-}
+//}
 
 .upcoming__info {
   @include respond-min('pc') {
