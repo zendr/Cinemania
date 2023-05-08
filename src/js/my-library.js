@@ -26,6 +26,9 @@ export function addMovieToLibrary(movieId) {
       })
       .slice(0, 2)
       .join(',');
+    if (movie.release_date) {
+      movie.release_date = movie.release_date.slice(0, 4);
+    }
     let libraries = JSON.parse(localStorage.getItem(librariesKey));
     if (!libraries) {
       libraries = {};

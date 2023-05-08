@@ -143,20 +143,28 @@
     }
 }
 
-.cards-list__rate {
-    color: var(--light-grey-color);
-    margin-top: auto;
-    margin-left: auto;
-
+.cards-list_second_line {
+    display: flex;
+  }
+  
+  .star-rate {
     font-size: 12px;
-    line-height: 1.5;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
+  
     @include respond-min('pc') {
-        font-size: 20px;
-        line-height: 1.2;
-        
+      font-size: 20px;
+      line-height: 1.2;
     }
-}
+  }
+  
+  .star {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#ffc226),
+      to(#f84119)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
