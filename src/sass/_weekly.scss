@@ -124,30 +124,6 @@ display: flex;
     
 }
 
-.gallery-weekly__info {
-    display: flex;
-    align-items: baseline;
-
-    padding: 12px 12px 0px 12px;
-    position: absolute;
-    bottom: 12px;
-
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-
-    z-index: 2;
-
-    width: 280px;
-
-    @include respond-min('tablets') {
-        width: 224px;
-    }
-
-    @include respond-min('pc') {
-        width: 395px;
-    }
-}
 
 .gallery-weekly__link {
     height: 406px;
@@ -214,5 +190,29 @@ max-width: 90%;
     }
 }
 
+.gallery-weekly__all-info{
+    display: flex;
+        align-items: baseline;
+    
+        padding: 12px 12px 0px 12px;
+        position: absolute;
+        bottom: 12px;
+    
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+    
+        z-index: 2;
+    
+        width: 280px;
+    
+        @include respond-min('tablets') {
+            width: 224px;
+        }
+    
+        @include respond-min('pc') {
+            width: 395px;
+        }
+}
 
 
