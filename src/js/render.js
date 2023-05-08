@@ -82,8 +82,7 @@ export function createListMarkup(data) {
             </div>
             </li>
             `;
-        }
-      )
+        })
       .join('');
   }
 }
