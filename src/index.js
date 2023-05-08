@@ -1,7 +1,5 @@
-
 import './js/api-vars';
 import './js/api-service';
-import './js/storage';
 import './js/teamModal';
 import './js/team';
 import './js/upcoming';
