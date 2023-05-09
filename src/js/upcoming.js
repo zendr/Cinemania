@@ -72,7 +72,7 @@ async function renderMarkup({
   const genreNames = await getGenresById(genre_ids);
 
   return `
-    <div class="container container__upcoming">
+    
  <div class="upcoming__card">
  <h2 class="upcoming__title">UPCOMING THIS MONTH</h2>
  <div class="upcoming__thumb">
@@ -118,7 +118,7 @@ async function renderMarkup({
             <button class="upcoming__remindme--btn" data-movieid=${id}  type="button">Remind me</button>
         </div>
 
-    </div>
+   
      `;
 }
 
