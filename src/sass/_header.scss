@@ -295,5 +295,19 @@ transition: color 300ms;
 .film__button,
 .film-list__info .film-list__char .film-list__text {
   color: var(--black-color);
-}      
+}  
+
+
+.library-empty__mistake{
+    color: var(--black-color);
+  }  
+  .upcoming__title .upcoming__info--title .upcoming__light--black .upcoming__info--about {
+    color: var(--black-color);
+  }
+  .upcoming__light--grey .slash .upcoming__info—pop--range .upcoming__info—genre--kind .upcoming__info—description .upcoming__info--white {
+    color: var(--secondary-bc-color);
+  }
+  .upcoming__info--white {
+    background: var(--s-light-gray-color);
+  } 
 }
