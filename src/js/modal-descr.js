@@ -1,10 +1,6 @@
 //імпортування бібліотек
 import { IMG_BASE_URL, BASE_URL, IMG_W400, API_KEY } from './api-vars';
 import { getMovieById2 } from './api-service';
-<<<<<<< Updated upstream
-import axios from 'axios';
-=======
->>>>>>> Stashed changes
 import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary, renderLibraryData } from './my-library';
 
 let posterPath = '';

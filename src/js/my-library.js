@@ -39,10 +39,8 @@ export function removeMovieFromLibrary(movieId) {
   let libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
   delete libraries[movieId];
   localStorage.setItem(librariesKey, JSON.stringify(libraries));
-<<<<<<< Updated upstream
-=======
-  // if (refs.libraryList) renderLibraryData();
->>>>>>> Stashed changes
+ if (refs.libraryList) renderLibraryData();
+
 }
 
 export function getMovieFromLibrary(movieId) {
