@@ -52,6 +52,11 @@
         
 }
 
+.see-all:hover{
+    transform: scale(1.12) translateZ(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 // ul
 .gallery-weekly__list{
 display: grid;
@@ -221,4 +226,7 @@ display: flex;
         }
 }
 
+.hover-cursor {
+    cursor: url('/src/images/header/logo_mob_1x.png'), auto;
+}
 

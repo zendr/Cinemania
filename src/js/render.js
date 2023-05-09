@@ -74,7 +74,7 @@ export function createListMarkup(data) {
             starIcons += `<span class="fa star ${starClass}"> </span>`;
           }
 
-          return `<li class='cards-list__item' data-id='${id}'>
+          return `<li class='cards-list__item hover-cursor' data-id='${id}'>
             <img
               class='cards-list__img'
               src='${posterPath}'

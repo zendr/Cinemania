@@ -6,7 +6,7 @@ const saveLs = (key, value) => {
       console.error('Set state error: ', error.message);
     }
   };
-  
+   
   const loadLs = key => {
     try {
       const serializedState = localStorage.getItem(key);
