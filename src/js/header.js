@@ -73,7 +73,8 @@ function themeKit () {
     }
 
 if(localStorage.getItem("ui-theme") === "light") {
-    themeKit();
+    setTimeout(() => { themeKit() }, 500);
+    ;
 }
 
 
@@ -104,7 +105,7 @@ renderRandomFilm().then(({data}) => {
     const randomFilm = data.results[randomNumber];
     console.log(randomFilm)
     return randomFilm
-}).then(({original_name, name, original_title, overview, backdrop_path}) => {
+}).then(({original_name, name, original_title, overview, backdrop_path, vote_average}) => {
     hero.innerHTML = ` 
     <div class="container">
     <div class="hero_box1" id="hero_box1"></div>
@@ -115,6 +116,23 @@ renderRandomFilm().then(({data}) => {
             ${original_title || name || original_name }
         </h1>
     </div>
+    <div class = "hero_rating" id="hero_rating">
+    <svg width = 24px height=24px>
+    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    </svg>
+    <svg width = 24px height=24px>
+    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    </svg>
+    <svg width = 24px height=24px>
+    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    </svg>
+    <svg width = 24px height=24px>
+    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    </svg>
+    <svg width = 24px height=24px>
+    <use href="./images/svg/sprite.svg#icon-star-polu-header"></use>
+    </svg>
+    </div>
         <div class="hero_page-box-api">
             <p>${overview}</p>
         </div>
@@ -122,5 +140,5 @@ renderRandomFilm().then(({data}) => {
         <p>${overview}</p>
     </div>
     <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
-</div>`;
+</div>`
 }).catch((error) => console.log(error))
