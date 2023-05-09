@@ -16,10 +16,10 @@ const currentPath = window.location.pathname;
 const navMob = document.getElementById("nav-mob");
 
 
-if (currentPath === "/index.html") {
+if (currentPath === "/Cinemania/" || "/Cinemania/index.html") {
     navHeader.children[0].children[0].classList.add("nav_list-current");
     navMob.children[0].children[0].classList.add("nav_list-current");
-} else if (currentPath === "/catalog.html") {
+} else if (currentPath === "/Cinemania/catalog.html") {
     navHeader.children[1].children[0].classList.add("nav_list-current");
     navMob.children[1].children[0].classList.add("nav_list-current");
 } else {
