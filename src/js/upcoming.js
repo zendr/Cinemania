@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';  
 import axios from 'axios';
 import {
   API_KEY,
@@ -74,7 +74,6 @@ async function renderMarkup({
   return `
     
  <div class="upcoming__card">
- <h2 class="upcoming__title">UPCOMING THIS MONTH</h2>
  <div class="upcoming__thumb">
       
       <picture class='.upcoming__poster'>
