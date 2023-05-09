@@ -57,14 +57,55 @@
   justify-content: center;
   align-items: center;
   @include respond-min('tablets') {
+    justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: nowrap;
+    gap: 16px;
   }
   @include respond-min('pc') {
   }
+  & .film-list__img {
+    width: 248px;
+    height: 315px;
+    margin-bottom: 22px;
+    @include respond-min('tablets') {
+      width: 294px;
+      height: 400px;
+    }
+    @include respond-min('pc') {
+      width: 375px;
+      height: 478px;
+    }
+
+    & img {
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      // background-color: var(--secondary-bc-color);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/placeholder/modal/no-image_modal_mobile.jpg);
+      @include respond-min('phone') {
+      }
+      @include respond-min('tablets') {
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/placeholder/modal/no-image_modal_tablet.jpg);
+      }
+      @include respond-min('pc') {
+        width: 100%;
+        height: 100%;
+        box-shadow: 1px 1px 24px 2px rgba(1, 1, 1, 0.45);
+        background-image: url(../images/placeholder/modal/no-image_modal_desktop.jpg);
+      }
+    }
+  }
 }
-.film-list__img {
-  width: 248px;
-  height: 315px;
+
+.film-list__info {
   @include respond-min('tablets') {
     width: 294px;
     height: 400px;
@@ -73,35 +114,6 @@
     width: 375px;
     height: 478px;
   }
-
-  & img {
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 5px;
-    width: 100%;
-    // background-color: var(--secondary-bc-color);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url(../images/placeholder/modal/no-image_modal_mobile.jpg);
-    margin-bottom: 22px;
-    @include respond-min('phone') {
-    }
-    @include respond-min('tablets') {
-      width: 294px;
-      height: 400px;
-      background-image: url(../images/placeholder/modal/no-image_modal_tablet.jpg);
-    }
-    @include respond-min('pc') {
-      width: 375px;
-      height: 478px;
-      box-shadow: 1px 1px 24px 2px rgba(1, 1, 1, 0.45);
-      background-image: url(../images/placeholder/modal/no-image_modal_desktop.jpg);
-    }
-  }
-}
-
-.film-list__info {
   & .film-list__title {
     @include font(20, 500, 23, 0);
     margin-bottom: 29px;
@@ -118,16 +130,41 @@
     }
   }
 
-  & div {
+  & .film-list__char {
     display: flex;
     justify-content: space-between;
-
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 30px;
     & .film-list__title_text {
+      width: 100px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
       @include font(14, 500, 16, 0);
       color: var(--light-grey-color);
       @include respond-min('phone') {
       }
       @include respond-min('tablets') {
+        width: 100px;
+        justify-content: flex-start;
+      }
+      @include respond-min('pc') {
+        @include font(16, 500, 19, 0);
+      }
+    }
+    & .film-list__title_char {
+      width: 120px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      @include font(14, 500, 16, 0);
+      color: var(--light-grey-color);
+      @include respond-min('phone') {
+      }
+      @include respond-min('tablets') {
+        width: 150px;
+        justify-content: flex-start;
       }
       @include respond-min('pc') {
         @include font(16, 500, 19, 0);
@@ -135,16 +172,24 @@
     }
 
     & .film-list__text_average {
-      background: var(--white-color);
-      border-radius: 5px;
+      width: 120px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
       @include font(12, 500, 14, 0);
-      color: var(--black-color);
+      color: var(--white-color);
       @include respond-min('phone') {
       }
       @include respond-min('tablets') {
       }
       @include respond-min('pc') {
         @include font(14, 500, 16, 0);
+      }
+      & .film-list__average {
+        background: var(--white-color);
+        border-radius: 5px;
+        color: var(--black-color);
+        padding: 1px 8px;
       }
     }
 
@@ -160,60 +205,62 @@
         @include font(16, 500, 19, 0);
       }
     }
-
-    & .film-list__title_text-about {
-      @include font(14, 500, 16, 0);
-      color: var(--light-grey-color);
-      @include respond-min('phone') {
-      }
-      @include respond-min('tablets') {
-      }
-      @include respond-min('pc') {
-        @include font(16, 500, 16, 0);
-      }
-    }
-
-    & .film-list__text-about {
-      @include font(12, 400, 20, 0);
-      color: var(--light-grey-color);
-      @include respond-min('phone') {
-      }
-      @include respond-min('tablets') {
-      }
-      @include respond-min('pc') {
-        @include font(14, 400, 20, 0);
-      }
-    }
   }
 
   & .film-list__about {
     display: flex;
     flex-wrap: wrap;
     @include respond-min('tablets') {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
     & .film-list__text-about {
       min-width: 248px;
       padding: 0;
     }
   }
+
+  & .film-list__title_text-about {
+    @include font(14, 500, 16, 0);
+    margin-bottom: 12px;
+    color: var(--light-grey-color);
+    @include respond-min('phone') {
+    }
+    @include respond-min('tablets') {
+    }
+    @include respond-min('pc') {
+      @include font(16, 500, 16, 0);
+    }
+  }
+
+  & .film-list__text-about {
+    @include font(12, 400, 20, 0);
+    color: var(--light-grey-color);
+    @include respond-min('phone') {
+    }
+    @include respond-min('tablets') {
+    }
+    @include respond-min('pc') {
+      @include font(14, 400, 20, 0);
+    }
+  }
 }
 
 .film__button-border {
+  margin-top: 16px;
   @include respond-min('tablets') {
+    margin-top: 24px;
     position: absolute;
-    bottom: 82px;
-    left: 305px;
+    bottom: 10px;
+    right: 220px;
   }
   @include respond-min('pc') {
-    bottom: 122px;
-    left: 405px;
+    bottom: 60px;
+    right: 255px;
   }
 }
 .film__button {
   text-align: center;
   border: none;
-  position: absolute;
   border-radius: 74px;
   width: 140px;
   height: 38px;
