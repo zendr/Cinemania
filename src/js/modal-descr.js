@@ -18,6 +18,8 @@ const refs = {
   Backdrop: document.querySelector('.backdrop'),
   ModalCont: document.querySelector('.modal__container'),
   cardsfilm: document.querySelector('.cards-film'),
+  FilmBtn: document.querySelector('.film__button'),
+  libraryList: document.querySelector('.library-list'),
 };
 
 //додавання слухачів
@@ -47,6 +49,9 @@ function AddFilmToLibrary() {
   const filmsId2 = refs.FilmBtn.dataset.id;
   if (getMovieFromLibrary(filmsId2)) {
     removeMovieFromLibrary(filmsId2);
+    if (refs.libraryList) {
+      closeModalDescr();
+    }
     refs.FilmBtn.innerHTML = "Add to Library";
   } else {
     addMovieToLibrary(filmsId2);

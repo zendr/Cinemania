@@ -16,15 +16,18 @@ const currentPath = window.location.pathname;
 const navMob = document.getElementById("nav-mob");
 
 
-if (currentPath === "/Cinemania/" || "/Cinemania/index.html") {
+if (currentPath === "/Cinemania/index.html") {
     navHeader.children[0].children[0].classList.add("nav_list-current");
     navMob.children[0].children[0].classList.add("nav_list-current");
 } else if (currentPath === "/Cinemania/catalog.html") {
     navHeader.children[1].children[0].classList.add("nav_list-current");
     navMob.children[1].children[0].classList.add("nav_list-current");
-} else {
+} else if(currentPath === "/Cinemania/library.html"){
     navHeader.children[2].children[0].classList.add("nav_list-current");
     navMob.children[2].children[0].classList.add("nav_list-current");
+} else {
+    navHeader.children[0].children[0].classList.add("nav_list-current");
+    navMob.children[0].children[0].classList.add("nav_list-current");
 }
 
 
