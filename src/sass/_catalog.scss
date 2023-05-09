@@ -114,7 +114,8 @@
 }
 
 .cards-list__info {
-    max-width: 90%;
+    max-width: 100%;
+    margin-right: -30%;
 }
 
 .cards-list__title {
@@ -137,26 +138,38 @@
     overflow: hidden;
     color: var(--light-grey-color);
 
+    @include respond-min('tablets') {
+        font-size: 10px;
+    }
+
     @include respond-min('pc') {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.2;
     }
 }
 
-.cards-list__rate {
-    color: var(--light-grey-color);
+.cards-list_second_line {
+    display: flex;
+  }
+  
+  .star-rate {
     margin-top: auto;
     margin-left: auto;
-
-    font-size: 12px;
-    line-height: 1.5;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
     @include respond-min('pc') {
-        font-size: 20px;
-        line-height: 1.2;
-        
+      font-size: 20px;
+      line-height: 1.2;
     }
-}
+  }
+  
+  .star {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#ffc226),
+      to(#f84119)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

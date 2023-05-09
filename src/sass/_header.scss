@@ -67,15 +67,28 @@ margin-left: 92px;
     display: none;
     @media screen and (min-width: 768px) {
         cursor: pointer;
+        position: relative;
         display: block;
         font-size: 14px;
         line-height: calc( 16 / 14);
         color: #B7B7B7;
         transition: color 300ms;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 0%;
+            transition: width 300ms;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -2px;
+            border-radius: 5px;
+        }
         &:hover {
             color: var(--accent-color);
+            &::before {
+                width: 100%;
+            }
         }
-
     }
 }
 .theme {
@@ -207,28 +220,68 @@ transition: color 300ms;
     color: #F87719;
 }
 }
+.nav_list-current {
+    color: var(--accent-color);
+}
+
+
+
+
+
+
 .theme_sunshine {
     background-color: #fff;
-    .menu, .nav-mob, .nav, .nav_list, .nav_list-mob {
+
+    .tui-page-btn {
+        border: 1px solid #595959;
+    }
+
+    .search__form--button {
         color: #000;
+    }
+
+    .tui-page-btn.tui-is-selected {
+        color: black
+    }
+
+    .menu, .nav, .nav_list {
+        color: #595959;
         &:hover{
             color: var(--accent-color);
         }
-        .logo_text {
-            color: #000;
+    }
+    .nav-mob, .nav_list-mob {
+        color: #111111;
+        &:hover{
+            color: var(--accent-color);
+        }
+    }
+    .logo_text {
+        color: #000;
+    }
+    .hero_btn-link {
+        &:hover {
+            background-color: #F8F8F8;
         }
     }
     @media screen and(min-width:768px) {
-        .hero_first-title, .hero_page-box2 {
-            color: #000;
+        .hero_first-title, .hero_first-title-api {
+            color: #111;
+        }
+        .hero_page-box2, .hero_page-box2-api {
+            color: #282828;
         }
     }
     @media screen and(max-width:767.27px) {
-        .hero_first-title {
+        .hero_first-title, .hero_first-title-api {
             color: #fff;
         }
         .blind {
             background-color: #fff;
         }
     }
+    .nav-list, .nav_list-current {
+        color: var(--accent-color);
+    }
+   
 }

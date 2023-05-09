@@ -1,8 +1,6 @@
-
 import './js/api-vars';
 import './js/api-service';
-import './js/storage';
-import './js/team-modal';
+import './js/teamModal';
 import './js/team';
 import './js/upcoming';
 import './js/refs';

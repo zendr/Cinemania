@@ -26,6 +26,9 @@ export function addMovieToLibrary(movieId) {
       })
       .slice(0, 2)
       .join(',');
+    if (movie.release_date) {
+      movie.release_date = movie.release_date.slice(0, 4);
+    }
     let libraries = JSON.parse(localStorage.getItem(librariesKey));
     if (!libraries) {
       libraries = {};
@@ -55,13 +58,13 @@ export function renderLibraryData() {
   let movieMarkup = renderMovies();
   if (!movieMarkup) {
     movieMarkup = `
-    <div class="container">
+    <div class=" container">
       <p class="library-empty__mistake">OOPS... <br> We are very sorry! <br> You don't have any movies at your library.</p>
-      <button class="library-empty__btn">Search movie </button>
+      <button class="btn-library" onclick="window.location.href='catalog.html'"><a class="btn-library__link">Search movie</a></button>
     </div>
       `;
   } else {
-    movieMarkup = `<div class="cards__list">${movieMarkup}</div>`;
+    movieMarkup = `<ul class="cards__list films">${movieMarkup}</ul>`;
   }
   refs.libraryList.innerHTML = movieMarkup;
 }

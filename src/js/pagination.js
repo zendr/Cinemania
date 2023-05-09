@@ -3,7 +3,7 @@ import { loadLs } from './storage';
 
 const container = document.getElementById('tui-pagination-container');
 const options = {
-  totalItems: 20000,
+  totalItems: loadLs('totalItems'),
   itemsPerPage: 20,
   visiblePages: 4,
   page: 1,

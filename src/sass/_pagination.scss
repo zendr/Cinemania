@@ -26,23 +26,31 @@
   background: var(--linear-to-top);
 }
 
-.tui-first,
-.tui-last {
-  display: none;
+.tui-page-btn.tui-first {
+  margin: 0;
+  border: none;
+  background-image: url(/src/images/pagination/double-arrow-prev.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.tui-page-btn.tui-last {
+  border: none;
+  background-image: url(/src/images/pagination/double-arrow-next.png);
+  background-position: 50% 50%;
 }
 .tui-page-btn.tui-prev-is-ellip.tui-first-child,
 .tui-page-btn.tui-next-is-ellip.tui-last-child {
   border: none;
 }
 .tui-page-btn.tui-next {
-  background-image: url(/src/images/svg/pagination_svg/arrow-next.svg);
+  background-image: url(/src/images/pagination/arrow-next.png);
   background-position: 50%;
   background-repeat: no-repeat;
   border: none;
   margin-right: 0;
 }
 .tui-page-btn.tui-prev {
-  background-image: url(/src/images/svg/pagination_svg/arrow-prev.svg);
+  background-image: url(/src/images/pagination/arrow-prev.png);
   background-position: 50%;
   background-repeat: no-repeat;
   border: none;
