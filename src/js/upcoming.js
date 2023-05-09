@@ -39,7 +39,7 @@ async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
     const returnedResult = data.results;
-    console.log(returnedResult);
+    // console.log(returnedResult);
 
     if (returnedResult.length >= 1) {
       const randomMovie =
