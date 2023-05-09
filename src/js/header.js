@@ -32,6 +32,8 @@ if (currentPath === "/Cinemania/index.html") {
 
 
 function themeKit () {
+    let backImg = document.getElementById("hero_box1")
+    let backColor = document.getElementById("hero_box2");
     if (themeBtn.dataset.theme === "false") {
     
         themeMoon.classList.toggle("theme-moon-light");
@@ -44,7 +46,9 @@ function themeKit () {
     body.classList.add("theme_sunshine");
     if (hero !== null){
         backImg.classList.add("hero_box1-light");
-        backColor.attributes.style.nodeValue = "background-color: #F8F8F8";
+        if(backColor !== null) {
+            backColor.attributes.style.nodeValue = "background-color: #F8F8F8";
+        }
     }
     localStorage.setItem("ui-theme", "light");
     
@@ -60,7 +64,9 @@ function themeKit () {
         body.classList.remove("theme_sunshine");
         if (hero !== null) {
             backImg.classList.remove("hero_box1-light");
-            backColor.attributes.style.nodeValue = "background-color: #0e0e0e"
+            if (backColor !== null) {
+                backColor.attributes.style.nodeValue = "background-color: #0e0e0e"
+            }
         }
         localStorage.setItem("ui-theme", "dark");
     }
@@ -98,9 +104,12 @@ renderRandomFilm().then(({data}) => {
     const randomFilm = data.results[randomNumber];
     console.log(randomFilm)
     return randomFilm
-}).then(({original_name, name, original_title, overview}) => {
+}).then(({original_name, name, original_title, overview, backdrop_path}) => {
     hero.innerHTML = ` 
     <div class="container">
+    <div class="hero_box1" id="hero_box1"></div>
+    <div class="hero_back"></div>
+    <img src="https://image.tmdb.org/t/p/original/${backdrop_path}" alt="BestFilmDay" loading="lazy" class="hero_img-head">
     <div class="hero_title-box-api">
         <h1 class="hero_first-title-api">
             ${original_title || name || original_name }

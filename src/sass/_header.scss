@@ -314,9 +314,19 @@ transition: color 300ms;
     fill: #111111;
    }
    .hero_first-title-api {
-    color: #111111;
+    @media screen and(min-width:768px) {
+        color: #111111;
+    }
    }
    .hero_page-box2-api {
     color: #282828;
+   }
+   #trailer {
+    &:hover {
+        background-color: #F8F8F8;
+    }
+   }
+   .hero_box1-ligth {
+    background-color: #595959;
    }
 }
