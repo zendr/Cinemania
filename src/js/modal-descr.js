@@ -18,18 +18,16 @@ const refs = {
   Backdrop: document.querySelector('.backdrop'),
   ModalCont: document.querySelector('.modal__container'),
   cardsfilm: document.querySelector('.cards-film'),
-  FilmBtn: document.querySelector('.film__button'),
 };
 
 //додавання слухачів
-  refs.openModal.addEventListener('click', openModalDescr);
-  refs.closeModal.addEventListener('click', closeModalDescr);
-  refs.FilmBtn.addEventListener('click', AddFilmToLibrary);
+refs.openModal.addEventListener('click', openModalDescr);
+refs.closeModal.addEventListener('click', closeModalDescr);
 // refs.FilmBtn.addEventListener('click', btn);
 // function btn() {
 //   console.log("btn", btn);
 // }
- 
+
 
 //відкривання модального вікна
 function openModalDescr(e) {
@@ -46,19 +44,19 @@ function openModalDescr(e) {
 }
 
 function AddFilmToLibrary() {
-  const filmsId2 = refs.FilmBtn.dataset.id; 
+  const filmsId2 = refs.FilmBtn.dataset.id;
   if (getMovieFromLibrary(filmsId2)) {
-      removeMovieFromLibrary(filmsId2);
-  refs.FilmBtn.innerHTML = "Add to Library";
+    removeMovieFromLibrary(filmsId2);
+    refs.FilmBtn.innerHTML = "Add to Library";
   } else {
-  addMovieToLibrary(filmsId2);
-      refs.FilmBtn.innerHTML = "Remove from Library";
+    addMovieToLibrary(filmsId2);
+    refs.FilmBtn.innerHTML = "Remove from Library";
   }
 }
- 
+
 //Перевірка фільма у локольному сховищу та обробка  кнопки
 function changeBtnLibrary(filmsId) {
-  refs.FilmBtn.dataset.id=`${filmsId}`;
+  refs.FilmBtn.dataset.id = `${filmsId}`;
   if (getMovieFromLibrary(filmsId)) {
     refs.FilmBtn.innerHTML = "Remove from Library";
   } else {
@@ -74,13 +72,16 @@ async function createMarkup(filmID) {
   return film.then(data => {
     console.log(data.genres);
     const genres = data.genres;
-    
+
     genres.forEach(genre => {
       genresList.push(` ${genre.name}`);
     });
-     filmMarkup = createFilmMarkup(data);
+    filmMarkup = createFilmMarkup(data);
     refs.cardsfilm.innerHTML = filmMarkup;
-   })
+    const filmBtn = document.querySelector('.film__button');
+    filmBtn.addEventListener('click', AddFilmToLibrary);
+    
+  })
 
 };
 
@@ -107,7 +108,7 @@ function closeModalDescr(e) {
   refs.ModalCont.classList.add('is-hidden');
   document.body.style.overflow = 'scroll';
   document.removeEventListener('keydown', onEscBtnPress);
-  document.removeEventListener('click', onBackdropClick);  
+  document.removeEventListener('click', onBackdropClick);
   document.removeEventListener('click', AddFilmToLibrary);
 }
 
@@ -156,6 +157,9 @@ function createFilmMarkup(data) {
                 <p class='film-list__title_text-about'>ABOUT</p>
                 <p class='film-list__text-about'>${overview}</p>
                  </div>
+                 <div class="film__button-border">
+                 <button type="button" class="film__button">Add to my library</button>
+             </div>
             </li>
           </ul>
       </li>`;

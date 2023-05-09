@@ -252,7 +252,6 @@
   margin-top: 16px;
   @include respond-min('tablets') {
     margin-top: 24px;
-    position: absolute;
     bottom: 10px;
     right: 220px;
   }
