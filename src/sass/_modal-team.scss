@@ -6,6 +6,7 @@
   left: 0;
   z-index: 999;
   background-color: #00000079;
+  overflow:hidden;
 }
 .team__backdrop--hidden {
   position: absolute;
@@ -41,7 +42,7 @@
 }
 
 .team__modal {
-  border-radius: 10px;
+  border-radius: 25px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -50,7 +51,7 @@
   left: 50%;
   margin: 0;
   padding: 7px;
-  background-color: #f7f7f7;
+  background-color: #FAEBD7;
   transform: translateX(-50%);
   overflow-y: scroll;
 
@@ -78,7 +79,7 @@
   transition: all 1s;
   &:hover,
   &:focus {
-    color: #ff6b08;
+    color: #A52A2A;
   }
 
   @media screen and (min-width: 768px) {
@@ -154,7 +155,7 @@
 
   &:hover,
   &:focus {
-    color: #ff6b08;
+    color: #A52A2A;
   }
 
   @media screen and (min-width: 768px) {
