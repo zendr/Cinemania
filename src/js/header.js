@@ -89,35 +89,29 @@ mobMenu.addEventListener("click", () => {
 
 
 
-// function renderRandomFilm () {
-//     const data = axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55");
-//     return data
-// }
-// renderRandomFilm().then(({data}) => {
-//     const randomNumber = Math.floor(Math.random() * 21);
-//     const randomFilm = data.results[randomNumber];
-//     console.log(randomFilm)
-//     return randomFilm
-// }).then(({original_name, name, original_title, overview}) => {
-//     hero.innerHTML = ` 
-//     <div class="container">
-//         <div class="hero_img-box">
-//             <div class="hero_box"></div>
-//             <div class="hero_box1" id="hero_box1"></div>
-//             <div  style="background-color: #0E0E0E;" class="hero_box2" id="hero_box2"></div>
-//         </div>
-//     <div class="hero_title-box-api">
-//         <h1 class="hero_first-title-api">
-//             ${original_title || name || original_name }
-//         </h1>
-//     </div>
-//     <input type = "range" class = "hero-inp">
-//         <div class="hero_page-box-api">
-//             <p>${overview}</p>
-//         </div>
-//     <div class="hero_page-box2-api">
-//         <p>${overview}</p>
-//     </div>
-//     <button type="button" class="hero_btn"><a href="./catalog.html" class="hero_btn-link">Watch trailer</a></button>
-// </div>`;
-// }).catch((error) => console.log(error))
+function renderRandomFilm () {
+    const data = axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55");
+    return data
+}
+renderRandomFilm().then(({data}) => {
+    const randomNumber = Math.floor(Math.random() * 21);
+    const randomFilm = data.results[randomNumber];
+    console.log(randomFilm)
+    return randomFilm
+}).then(({original_name, name, original_title, overview}) => {
+    hero.innerHTML = ` 
+    <div class="container">
+    <div class="hero_title-box-api">
+        <h1 class="hero_first-title-api">
+            ${original_title || name || original_name }
+        </h1>
+    </div>
+        <div class="hero_page-box-api">
+            <p>${overview}</p>
+        </div>
+    <div class="hero_page-box2-api">
+        <p>${overview}</p>
+    </div>
+    <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
+</div>`;
+}).catch((error) => console.log(error))
