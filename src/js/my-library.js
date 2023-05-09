@@ -72,7 +72,7 @@ export function renderLibraryData() {
 
 function renderMovies() {
   const allMovies = getMoviesFromLibrary();
-  console.log(allMovies)
+
   if (!Object.keys(allMovies)) {
     return null;
   }
