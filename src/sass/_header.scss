@@ -301,13 +301,16 @@ transition: color 300ms;
 .library-empty__mistake{
     color: var(--black-color);
   }  
-  .upcoming__title .upcoming__info--title .upcoming__light--black .upcoming__info--about {
+  .upcoming__title, .upcoming__info--title, .upcoming__light--black, .upcoming__info--about {
     color: var(--black-color);
   }
-  .upcoming__light--grey .slash .upcoming__info—pop--range .upcoming__info—genre--kind .upcoming__info—description .upcoming__info--white {
+  .upcoming__light--grey, .slash, .upcoming__info--pop--range, .upcoming__info--genre--kind, .upcoming__info—genre--kind, .upcoming__info--description, .upcoming__info--white {
     color: var(--secondary-bc-color);
   }
   .upcoming__info--white {
     background: var(--s-light-gray-color);
   } 
+  .modal__close-btn {
+    fill: #111111;
+   }
 }
