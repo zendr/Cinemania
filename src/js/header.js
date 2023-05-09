@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const themeBtn = document.getElementById("themeBtn");
 const themeMoon = document.getElementById("themeMoon");
 const themeElipse = document.getElementById("themeElipse");
@@ -6,10 +8,25 @@ const menuBtn = document.getElementById("menu");
 const mobMenu = document.getElementById("mobile");
 const blind = document.getElementById("blind")
 const body = document.querySelector("body")
-const backImg = document.getElementById("hero_box1")
-const backColor = document.getElementById("hero_box2");
+let backImg = document.getElementById("hero_box1")
+let backColor = document.getElementById("hero_box2");
 const hero = document.querySelector(".hero");
-// console.log(hero)
+const navHeader = document.getElementById("nav-header");
+const currentPath = window.location.pathname;
+const navMob = document.getElementById("nav-mob");
+
+
+if (currentPath === "/index.html") {
+    navHeader.children[0].children[0].classList.add("nav_list-current");
+    navMob.children[0].children[0].classList.add("nav_list-current");
+} else if (currentPath === "/catalog.html") {
+    navHeader.children[1].children[0].classList.add("nav_list-current");
+    navMob.children[1].children[0].classList.add("nav_list-current");
+} else {
+    navHeader.children[2].children[0].classList.add("nav_list-current");
+    navMob.children[2].children[0].classList.add("nav_list-current");
+}
+
 
 function themeKit () {
     if (themeBtn.dataset.theme === "false") {
@@ -65,3 +82,39 @@ mobMenu.addEventListener("click", () => {
     blind.classList.add("blind-hidden")
 
 })
+
+
+
+
+// function renderRandomFilm () {
+//     const data = axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55");
+//     return data
+// }
+// renderRandomFilm().then(({data}) => {
+//     const randomNumber = Math.floor(Math.random() * 21);
+//     const randomFilm = data.results[randomNumber];
+//     console.log(randomFilm)
+//     return randomFilm
+// }).then(({original_name, name, original_title, overview}) => {
+//     hero.innerHTML = ` 
+//     <div class="container">
+//         <div class="hero_img-box">
+//             <div class="hero_box"></div>
+//             <div class="hero_box1" id="hero_box1"></div>
+//             <div  style="background-color: #0E0E0E;" class="hero_box2" id="hero_box2"></div>
+//         </div>
+//     <div class="hero_title-box-api">
+//         <h1 class="hero_first-title-api">
+//             ${original_title || name || original_name }
+//         </h1>
+//     </div>
+//     <input type = "range" class = "hero-inp">
+//         <div class="hero_page-box-api">
+//             <p>${overview}</p>
+//         </div>
+//     <div class="hero_page-box2-api">
+//         <p>${overview}</p>
+//     </div>
+//     <button type="button" class="hero_btn"><a href="./catalog.html" class="hero_btn-link">Watch trailer</a></button>
+// </div>`;
+// }).catch((error) => console.log(error))
