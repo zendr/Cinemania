@@ -91,31 +91,28 @@ async function renderMarkup({
             <div class="upcoming__movie">
                 <div class="upcoming__info--left">
                     <div class="upcoming__info--release">
-                        <p class="upcoming__text">Release date <span class="upcoming__info--release--date">${release_date}</span></p>
+                        <p class="upcoming__text"> <span class ="upcoming__light--black">Release date</span> <span class="upcoming__info--release--date">${release_date}</span></p>
                     </div>
                     <div class="upcoming__info--vote">
-                        <p class="upcoming__text">Vote/Votes
+                        <p class="upcoming__text"><span class ="upcoming__light--black">Vote/Votes</span>
                         <div class="upcoming__info--votes"><span class="upcoming__info--white">${vote_average}</span> <span
                                 class="slash">/</span>
                             <span class="upcoming__info--white">
-                                ${vote_count}</span>
+                               ${vote_count}</span>
                         </div>
                         </p>
                     </div>
                 </div>
                 <div class="upcoming__info--right">
                     <div class="upcoming__info--pop">
-                        <p class="upcoming__text"> Popularity <span class="upcoming__info--pop--range">${popularity}</span> </p>
+                        <p class="upcoming__text"> <span class ="upcoming__light--black">Popularity</span> <span class="upcoming__info--pop--range">${popularity}</span> </p>
                     </div>
                     <div class="upcoming__info--genre">
-                        <p class="upcoming__text"> Genre <span class="upcoming__info--genre--kind">${genreNames}</span> </p>
+                        <p class="upcoming__text"><span class ="upcoming__light--black">Genre</span> <span class="upcoming__info--genre--kind">${genreNames}</span> </p>
                     </div>
                 </div>
             </div>
             <h2 class="upcoming__info--about">ABOUT</h2>
-
-Maria Huziuk, [08.05.2023 16:21]
-
 
             <p class="upcoming__info--description">${overview}</p>
             <button class="upcoming__remindme--btn" data-movieid=${id}  type="button">Remind me</button>
@@ -139,3 +136,4 @@ async function getGenresById(genreIds) {
 
   return genreNames.join(', ');
 }
+
