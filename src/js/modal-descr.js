@@ -2,7 +2,7 @@
 import { IMG_BASE_URL, BASE_URL, IMG_W400, API_KEY } from './api-vars';
 import { getMovieById2 } from './api-service';
 import axios from 'axios';
-import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary } from './my-library';
+import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary, renderLibraryData } from './my-library';
 
 let posterPath = '';
 let genresList = [];
@@ -53,9 +53,6 @@ function AddFilmToLibrary() {
   const filmsId2 = filmBtn.dataset.id;
   if (getMovieFromLibrary(selectedMovieId)) {
     removeMovieFromLibrary(selectedMovieId);
-    if (refs.libraryList) {
-      closeModalDescr();
-    }
     filmBtn.innerHTML = "Add to Library";
   } else {
     addMovieToLibrary(selectedMovieId);
@@ -120,6 +117,11 @@ function closeModalDescr(e) {
   document.removeEventListener('keydown', onEscBtnPress);
   document.removeEventListener('click', onBackdropClick);
   document.removeEventListener('click', AddFilmToLibrary);
+  if (refs.libraryList) {
+    renderLibraryData();
+    refs.cardList = document.querySelector('.films');
+    if (refs.cardList) refs.cardList.addEventListener('click', createModal)
+  }  
 }
 
 function createFilmMarkup(data) {
