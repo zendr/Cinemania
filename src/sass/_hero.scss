@@ -3,6 +3,11 @@ position: relative;
 padding-top: 40px;
 height: 381px;
 overflow: hidden;
+@media screen and(max-width:767.27px) {
+    max-width: 480px;
+margin-left: auto;
+margin-right: auto;
+}
 @media screen and(min-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -60,7 +65,6 @@ display: none;
     background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/SubtractPc.png);
     width: 1280px;
     height: 720px;
-    background-position: 60px;
 }
 }
 .hero_box2 {
@@ -121,13 +125,11 @@ display: none;
     left: 0;
     background-color: #FFFFFF;
     background: url(./../images/header/SubtractTabLight.png);
-    background-position: 30px;
 }
 @media screen and(min-width: 1280px){
     background: url(./../images/header/SubtractPcLight.png);
     width: 1280px;
     height: 720px;
-    background-position: 60px;
 }
 }
 
@@ -296,6 +298,14 @@ color: #FFFFFF;
 
 }
 .hero_page-box-api {
+    p {
+        overflow: scroll;
+        scrollbar-width: 0px;
+        padding-right: 5px;
+        &::-webkit-scrollbar {
+            width: 0px;
+          }
+    }
     margin-top: 8px;
     width: 166px;
 
@@ -318,18 +328,22 @@ color: #FFFFFF;
     @media screen and(min-width: 768px) {
         margin-top: 16px;
         display: block;
-        font-size: 14px;
         margin-top: 20px;
 
-        line-height: calc(16 / 14);
         color: #F8F8F8;
         width: 357px;
 
 
         p {
+            font-size: 14px;
+            line-height: calc(16 / 14);
             overflow: scroll;
+            scrollbar-width: 0px;
             padding-right: 5px;
             height: 64px;
+            &::-webkit-scrollbar {
+                width: 0px;
+              }
         }
     }
     @media screen and(min-width:1280px) {
@@ -338,6 +352,10 @@ color: #FFFFFF;
         width: 464px;
         margin-top: 28px;
         margin-bottom: 36px;
+        p {
+            font-size: 16px;
+            line-height: calc(19 / 16);
+        }
 
     }
 }
@@ -350,66 +368,96 @@ color: #FFFFFF;
 
 
 
-.hero_box-api {
-    @media screen and(max-width: 767.27px) {
+
+#trailer {
+position: relative;
+background: none;
+transition: all 300ms;
+    &::before {
         position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    overflow: hidden;
-    background: linear-gradient(87.8deg, #0E0E0E 5.61%, rgba(14, 14, 14, 0) 40.39%), url(./../images/header/bck-hero-mob-1x.png), #0E0E0E;
-    background-repeat: no-repeat;
-    background-position: 120px;
-    width: 100%;
-    height: 380px;
-    
-    background-size: cover;
-    @include retina {
-        background: linear-gradient(87.8deg, #0E0E0E 5.61%, rgba(14, 14, 14, 0) 40.39%), url(./../images/header/bck-hero-mob-2x.png), #0E0E0E;
-        background-repeat: no-repeat;
-        background-position: 120px;
-        width: 100%;
-        height: 380px;
-        background-size: cover;
+        z-index: -1;
+        content: "";
+        width: 103%;
+        height: 110%;
+        background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+        border-radius: 74px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+    &:hover {
+        background-color: #111111;
+        color: #F84119;
     }
 }
 
-.hero_box2-api {
+
+
+.hero_box1-api {
+    display: none;
     @media screen and(min-width: 768px) {
+        display: block;
         position: absolute;
-        top: 0;
-        right: 0;
-        z-index: -2;
-        background: url(./../images/header/bck-hero-tab-1x.png);
-        background-repeat: no-repeat;
-        background-position: 260px;
-        width: 100%;
-        height: 380px;
-        background-size: contain;
-        @include retina {
-            background: url(./../images/header/bck-hero-tab-2x.png);
-            background-repeat: no-repeat;
-            background-position: 260px;
+        z-index: -1;
+        bottom: 0;
+        width: 768px;
+        height: 432px;
+        left: 0;
+        background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/Subtract.png);
+    }
+    @media screen and(min-width: 1280px){
+        background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/SubtractPc.png);
+        width: 1280px;
+        height: 720px;
+        background-position: 60px;
+    }
+    }
+    .hero_box1-light-api {
+        display: none;
+        @media screen and(min-width: 768px) {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            width: 768px;
+            height: 432px;
+            left: 0;
+            // background-color: #FFFFFF;
+            background: url(./../images/header/SubtractTabLight.png);
+            background-position: 30px;
+        }
+        @media screen and(min-width: 1280px){
+            background: url(./../images/header/SubtractPcLight.png);
+            width: 1280px;
+            height: 720px;
+            background-position: 60px;
+        }
+        }
+        .hero_back {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            left: 0;
             width: 100%;
-            height: 372px;
-            background-size: contain;
+            height: 100%;
+            background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%);
+            @media screen and(min-width:768px) {
+                background: none;
+            }
         }
-    }
-    @media screen and(min-width: 1280px) {
-        background: url(./../images/header/bck-hero-pcc-1x.png);
-        background-repeat: no-repeat;
-        background-position: 360px;
-        width: 100%;
-        height: 660px;
-        background-size: contain;
-        @include retina {
-            background: url(./../images/header/bck-hero-pcc-2x.png);
-        background-repeat: no-repeat;
-        background-position: 360px;
-        width: 100%;
-        height: 660px;
-        background-size: contain;
+        .hero_img-head{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            z-index: -5;
+            @media screen and(min-width:768px) {
+                left: 200px;
+                top: -5px;
+            }
+            @media screen and(min-width: 1280px) {
+                left: 340px;
+            }
         }
-    }
-}
