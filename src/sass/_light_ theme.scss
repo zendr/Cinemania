@@ -1,10 +1,24 @@
 // Start CATALOG
 // ПРи переході на світлу тему змінюється
-    // background на body білого кольору
-    // .search_form--button ---> color: black
-    // .tui-page-btn.tui-is-selected ---> color: black
-    // .tui-page-btn ---> border: 1px solid #595959;
+// background на body білого кольору
+// .search_form--button ---> color: black
+// .tui-page-btn.tui-is-selected ---> color: black
+// .tui-page-btn ---> border: 1px solid #595959;
 // Finish CATALOG
 
-
 // ===============done============== //
+//Нечаев - модалка
+.modal__container {
+  background-color: var(--white-color);
+  box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
+}
+
+.film-list__info .film-list__title,
+.film-list__info .film-list__char .film-list__title_text,
+.film-list__info .film-list__char .film-list__text_average,
+.film-list__info .film-list__title_text-about,
+.film-list__info .film-list__text-about,
+.film__button,
+.film-list__info .film-list__char .film-list__text {
+  color: var(--black-color);
+}
