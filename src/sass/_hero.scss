@@ -1,71 +1,75 @@
 .hero {
-position: relative;
-padding-top: 40px;
-height: 381px;
-overflow: hidden;
-@media screen and(max-width:767.27px) {
-    max-width: 480px;
-margin-left: auto;
-margin-right: auto;
-}
-@media screen and(min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 768px;
-    height: 373px;
-    margin-left: auto;
-    margin-right: auto;
-}
-@media screen and(min-width: 1280px) {
-    width: 1280px;
-    height: 661px;
-    margin-left: auto;
-    margin-right: auto;
-}
+    position: relative;
+    padding-top: 40px;
+    height: 381px;
+    overflow: hidden;
+    @media screen and(max-width:767.27px) {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen and(min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 768px;
+        height: 373px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen and(min-width: 1280px) {
+        width: 1280px;
+        height: 661px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .hero_box {
     @media screen and(max-width: 767.27px) {
         position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    overflow: hidden;
-    background: linear-gradient(87.8deg, #0E0E0E 5.61%, rgba(14, 14, 14, 0) 40.39%), url(./../images/header/bck-hero-mob-1x.png), #0E0E0E;
-    background-repeat: no-repeat;
-    background-position: 120px;
-    width: 100%;
-    height: 380px;
-    
-    background-size: cover;
-    @include retina {
-        background: linear-gradient(87.8deg, #0E0E0E 5.61%, rgba(14, 14, 14, 0) 40.39%), url(./../images/header/bck-hero-mob-2x.png), #0E0E0E;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+        background: linear-gradient(87.8deg, #0e0e0e 5.61%, rgba(14, 14, 14, 0) 40.39%),
+            url(./../images/header/bck-hero-mob-1x.png), #0e0e0e;
         background-repeat: no-repeat;
         background-position: 120px;
         width: 100%;
         height: 380px;
+
         background-size: cover;
-    }
+        @include retina {
+            background: linear-gradient(87.8deg, #0e0e0e 5.61%, rgba(14, 14, 14, 0) 40.39%),
+                url(./../images/header/bck-hero-mob-2x.png), #0e0e0e;
+            background-repeat: no-repeat;
+            background-position: 120px;
+            width: 100%;
+            height: 380px;
+            background-size: cover;
+        }
     }
 }
 .hero_box1 {
-display: none;
-@media screen and(min-width: 768px) {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    width: 768px;
-    height: 432px;
-    left: 0;
-    background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/Subtract.png);
-}
-@media screen and(min-width: 1280px){
-    background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/SubtractPc.png);
-    width: 1280px;
-    height: 720px;
-}
+    display: none;
+    @media screen and(min-width: 768px) {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        width: 768px;
+        height: 432px;
+        left: 0;
+        background: linear-gradient(87.8deg, #0e0e0e 15.61%, rgba(14, 14, 14, 0) 60.39%),
+            url(./../images/header/Subtract.png);
+    }
+    @media screen and(min-width: 1280px) {
+        background: linear-gradient(87.8deg, #0e0e0e 15.61%, rgba(14, 14, 14, 0) 60.39%),
+            url(./../images/header/SubtractPc.png);
+        width: 1280px;
+        height: 720px;
+    }
 }
 .hero_box2 {
     @media screen and(min-width: 768px) {
@@ -97,48 +101,34 @@ display: none;
         background-size: contain;
         @include retina {
             background: url(./../images/header/bck-hero-pcc-2x.png);
-        background-repeat: no-repeat;
-        background-position: 360px;
-        width: 100%;
-        height: 660px;
-        background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 360px;
+            width: 100%;
+            height: 660px;
+            background-size: contain;
         }
     }
 }
 
-
-
-
-
-
-
-
 .hero_box1-light {
-display: none;
-@media screen and(min-width: 768px) {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    width: 768px;
-    height: 432px;
-    left: 0;
-    background-color: #FFFFFF;
-    background: url(./../images/header/SubtractTabLight.png);
+    display: none;
+    @media screen and(min-width: 768px) {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        width: 768px;
+        height: 432px;
+        left: 0;
+        background-color: #ffffff;
+        background: url(./../images/header/SubtractTabLight.png);
+    }
+    @media screen and(min-width: 1280px) {
+        background: url(./../images/header/SubtractPcLight.png);
+        width: 1280px;
+        height: 720px;
+    }
 }
-@media screen and(min-width: 1280px){
-    background: url(./../images/header/SubtractPcLight.png);
-    width: 1280px;
-    height: 720px;
-}
-}
-
-
-
-
-
-
-
 
 .hero_title-box {
     width: 199px;
@@ -152,23 +142,25 @@ display: none;
         height: 150px;
     }
 }
+
 .hero_first-title {
-font-size: 32px;
-line-height: calc(38 / 32);
-color: #FFFFFF;
-@media screen and(min-width: 768px) {
-    font-size: 44px;
-    line-height: calc(52 / 44);
-    width: 332px;
-    height: 164px;
+    font-size: 32px;
+    line-height: calc(38 / 32);
+    color: #ffffff;
+    @media screen and(min-width: 768px) {
+        font-size: 44px;
+        line-height: calc(52 / 44);
+        width: 332px;
+        height: 164px;
+    }
+    @media screen and(min-width: 1280px) {
+        font-size: 64px;
+        line-height: calc(75 / 64);
+        width: 464px;
+        height: 150px;
+    }
 }
-@media screen and(min-width: 1280px) {
-    font-size: 64px;
-    line-height: calc(75 / 64);
-    width: 464px;
-    height: 150px;
-}
-}
+
 .hero_page-box {
     margin-top: 8px;
     width: 166px;
@@ -177,11 +169,12 @@ color: #FFFFFF;
     font-weight: 400;
     font-size: 14px;
     line-height: calc(16 / 14);
-    color: #F8F8F8;
+    color: #f8f8f8;
     @media screen and(min-width: 768px) {
         display: none;
     }
 }
+
 .hero_page-box2 {
     display: none;
     @media screen and(min-width: 768px) {
@@ -189,7 +182,7 @@ color: #FFFFFF;
         display: block;
         font-size: 14px;
         line-height: calc(16 / 14);
-        color: #F8F8F8;
+        color: #f8f8f8;
         width: 357px;
         height: 64px;
     }
@@ -200,6 +193,7 @@ color: #FFFFFF;
         height: 76px;
     }
 }
+
 .hero_btn {
     position: relative;
     margin-top: 16px;
@@ -208,7 +202,7 @@ color: #FFFFFF;
     height: 38px;
     border: none;
     outline: none;
-    background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+    background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
     border-radius: 74px;
     font-weight: 500;
     font-size: 12px;
@@ -216,20 +210,19 @@ color: #FFFFFF;
     color: #111111;
     transition: color 300ms;
     @media screen and(min-width:768px) {
-
         width: 120px;
         height: 40px;
         font-size: 14px;
         line-height: calc(20 / 14);
     }
     @media screen and(min-width:1280px) {
-
         width: 130px;
         height: 48px;
         font-size: 16px;
         line-height: calc(24 / 16);
     }
 }
+
 .hero_btn-link {
     position: absolute;
     color: #111111;
@@ -238,64 +231,53 @@ color: #FFFFFF;
     transform: translate(-50%, -50%);
     width: 106px;
     height: 34px;
-    background-color: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+    background-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
     border-radius: 74px;
     transition: background-color 300ms, color 300ms;
-    &:hover{
+    &:hover {
         background-color: #0e0e0e;
         color: var(--accent-color);
     }
     @media screen and(min-width:768px) {
-
         width: 116px;
         height: 36px;
     }
     @media screen and(min-width:1280px) {
-
         width: 126px;
         height: 44px;
     }
 }
 
-
-
-
-
-
-
 .hero_title-box-api {
     width: 199px;
-    
+
     @media screen and(min-width: 768px) {
         width: 332px;
-
     }
     @media screen and(min-width: 1280px) {
         width: 464px;
-
     }
 }
+
 .hero_first-title-api {
-font-size: 32px;
+    font-size: 32px;
 
-line-height: calc(38 / 32);
-color: #FFFFFF;
-@media screen and(min-width: 768px) {
-    font-size: 44px;
-    margin-bottom: 12px;
-    line-height: calc(52 / 44);
-    width: 332px;
+    line-height: calc(38 / 32);
+    color: #ffffff;
 
-}
-@media screen and(min-width: 1280px) {
-    font-size: 64px;
-    line-height: calc(75 / 64);
-    width: 464px;
-    margin-bottom: 16px;
+    @media screen and(min-width: 768px) {
+        font-size: 44px;
+        margin-bottom: 12px;
+        line-height: calc(52 / 44);
+        width: 332px;
+    }
 
-}
-
-
+    @media screen and(min-width: 1280px) {
+        font-size: 64px;
+        line-height: calc(75 / 64);
+        width: 464px;
+        margin-bottom: 16px;
+    }
 }
 .hero_page-box-api {
     p {
@@ -304,7 +286,7 @@ color: #FFFFFF;
         padding-right: 5px;
         &::-webkit-scrollbar {
             width: 0px;
-          }
+        }
     }
     margin-top: 8px;
     width: 166px;
@@ -313,7 +295,7 @@ color: #FFFFFF;
     font-weight: 400;
     font-size: 14px;
     line-height: calc(16 / 14);
-    color: #F8F8F8;
+    color: #f8f8f8;
     p {
         overflow: scroll;
         padding-right: 5px;
@@ -326,63 +308,58 @@ color: #FFFFFF;
 .hero_page-box2-api {
     display: none;
     @media screen and(min-width: 768px) {
-        margin-top: 16px;
         display: block;
-        margin-top: 20px;
 
-        color: #F8F8F8;
+        color: #f8f8f8;
         width: 357px;
-
 
         p {
             font-size: 14px;
             line-height: calc(16 / 14);
-            overflow: scroll;
+            overflow: hidden;
             scrollbar-width: 0px;
-            padding-right: 5px;
-            height: 64px;
+
+            height: auto;
+            width: 166px;
             &::-webkit-scrollbar {
                 width: 0px;
-              }
+            }
+
+            @media screen and(min-width: 768px) {
+                width: 357px;
+            }
+
+            @media screen and(min-width:1280px) {
+                width: 368px;
+            }
         }
     }
     @media screen and(min-width:1280px) {
         font-size: 16px;
         line-height: calc(19 / 16);
         width: 464px;
-        margin-top: 28px;
         margin-bottom: 36px;
         p {
             font-size: 16px;
             line-height: calc(19 / 16);
         }
-
     }
 }
 .hero_rating {
-margin-top: 20px;
+    margin-top: 20px;
 }
 
-
-
-
-
-
-
-
-
-
 #trailer {
-position: relative;
-background: none;
-transition: all 300ms;
+    position: relative;
+    background: none;
+    transition: all 300ms;
     &::before {
         position: absolute;
         z-index: -1;
         content: "";
         width: 103%;
         height: 110%;
-        background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+        background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
         border-radius: 74px;
         top: 50%;
         left: 50%;
@@ -390,11 +367,9 @@ transition: all 300ms;
     }
     &:hover {
         background-color: #111111;
-        color: #F84119;
+        color: #f84119;
     }
 }
-
-
 
 .hero_box1-api {
     display: none;
@@ -406,61 +381,84 @@ transition: all 300ms;
         width: 768px;
         height: 432px;
         left: 0;
-        background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/Subtract.png);
+        background: linear-gradient(87.8deg, #0e0e0e 15.61%, rgba(14, 14, 14, 0) 60.39%),
+            url(./../images/header/Subtract.png);
     }
-    @media screen and(min-width: 1280px){
-        background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%), url(./../images/header/SubtractPc.png);
+    @media screen and(min-width: 1280px) {
+        background: linear-gradient(87.8deg, #0e0e0e 15.61%, rgba(14, 14, 14, 0) 60.39%),
+            url(./../images/header/SubtractPc.png);
         width: 1280px;
         height: 720px;
         background-position: 60px;
     }
+}
+.hero_box1-light-api {
+    display: none;
+    @media screen and(min-width: 768px) {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        width: 768px;
+        height: 432px;
+        left: 0;
+        // background-color: #FFFFFF;
+        background: url(./../images/header/SubtractTabLight.png);
+        background-position: 30px;
     }
-    .hero_box1-light-api {
-        display: none;
-        @media screen and(min-width: 768px) {
-            display: block;
-            position: absolute;
-            z-index: -1;
-            bottom: 0;
-            width: 768px;
-            height: 432px;
-            left: 0;
-            // background-color: #FFFFFF;
-            background: url(./../images/header/SubtractTabLight.png);
-            background-position: 30px;
-        }
-        @media screen and(min-width: 1280px){
-            background: url(./../images/header/SubtractPcLight.png);
-            width: 1280px;
-            height: 720px;
-            background-position: 60px;
-        }
-        }
-        .hero_back {
-            position: absolute;
-            top: 0;
-            z-index: -1;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(87.8deg, #0E0E0E 15.61%, rgba(14, 14, 14, 0) 60.39%);
-            @media screen and(min-width:768px) {
-                background: none;
-            }
-        }
-        .hero_img-head{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            object-fit: cover;
-            z-index: -5;
-            @media screen and(min-width:768px) {
-                left: 200px;
-                top: -5px;
-            }
-            @media screen and(min-width: 1280px) {
-                left: 340px;
-            }
-        }
+    @media screen and(min-width: 1280px) {
+        background: url(./../images/header/SubtractPcLight.png);
+        width: 1280px;
+        height: 720px;
+        background-position: 60px;
+    }
+}
+.hero_back {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(87.8deg, #0e0e0e 15.61%, rgba(14, 14, 14, 0) 60.39%);
+    @media screen and(min-width:768px) {
+        background: none;
+    }
+}
+.hero_img-head {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -5;
+    @media screen and(min-width:768px) {
+        left: 200px;
+        top: -5px;
+    }
+    @media screen and(min-width: 1280px) {
+        left: 340px;
+    }
+}
+
+.star-rate--hero {
+    margin-top: 12px;
+    margin-bottom: 21px;
+    margin-left: auto;
+    font-size: 18px;
+
+    @include respond-min("tablets") {
+        margin-top: 14px;
+        margin-bottom: 22px;
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    @include respond-min("pc") {
+        margin-top: 18px;
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 1.2;
+    }
+}

@@ -2,26 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   @include respond-min("pc") {
     align-items: start;
     flex-direction: row;
     justify-content: center;
   }
 }
-
-// .upcoming__card {
-//   display: flex;
-//   justify-content: center;
-
-//   @include respond-min("tablets") {
-//     flex-direction: column;
-//   }
-  
-//   @include respond-min("pc") {
-//     flex-direction: column;
-//   }
-// }
 
 .upcoming__title {
   @media screen and (min-width: 320px) {
