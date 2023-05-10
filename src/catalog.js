@@ -6,4 +6,4 @@ import './js/searchMovie';
 import './js/modal-descr';
 import './js/teamModal';
 import './js/btn-up';
-
+import './js/modal-trailer';

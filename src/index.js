@@ -10,3 +10,4 @@ import './js/header';
 import './js/btn-up';
 import './js/weekly';
 import './js/modal-descr';
+import './js/modal-trailer';
