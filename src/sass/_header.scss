@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.header_logo-box{
+.header_logo-box {
     display: flex;
     align-items: center;
 }
@@ -24,8 +24,8 @@ body {
     width: 32px;
     height: 32px;
     @media screen and (min-width: 768px) {
-      width: 48px;
-      height: 48px;
+        width: 48px;
+        height: 48px;
     }
 }
 .logo_text {
@@ -39,18 +39,18 @@ body {
     }
 }
 .menu {
-font-weight: 500;
-font-size: 12px;
-line-height: calc(14 / 12);
-color: var(--light-grey-color);
-transition: color 300ms;
-margin-left: 92px;
-&:hover {
-    color: var(--accent-color);
-}
-@media screen and (min-width: 768px) {
-    display: none;
-}
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    color: var(--light-grey-color);
+    transition: color 300ms;
+    margin-left: 92px;
+    &:hover {
+        color: var(--accent-color);
+    }
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
 }
 .nav {
     display: none;
@@ -70,8 +70,8 @@ margin-left: 92px;
         position: relative;
         display: block;
         font-size: 14px;
-        line-height: calc( 16 / 14);
-        color: #B7B7B7;
+        line-height: calc(16 / 14);
+        color: #b7b7b7;
         transition: color 300ms;
         &::before {
             position: absolute;
@@ -97,16 +97,16 @@ margin-left: 92px;
     cursor: pointer;
     width: 38px;
     height: 16px;
-    background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
-border-radius: 194px;
-@media screen and (min-width: 768px) {
-    width: 50px;
-    height: 20px;
-}
-@media screen and (min-width: 1280px) {
-    width: 60px;
-    height: 24px;
-}
+    background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+    border-radius: 194px;
+    @media screen and (min-width: 768px) {
+        width: 50px;
+        height: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 60px;
+        height: 24px;
+    }
 }
 .theme-moon {
     position: absolute;
@@ -166,13 +166,12 @@ border-radius: 194px;
     top: 50%;
     transform: translateY(-50%);
     width: 14px;
-    height: 14px; 
-    transition: right 300ms; 
+    height: 14px;
+    transition: right 300ms;
 }
 .theme-sun-light {
     right: 3px;
 }
-
 
 .mobile {
     position: fixed;
@@ -207,27 +206,22 @@ border-radius: 194px;
     font-weight: 400;
     font-size: 14px;
     line-height: calc(16 / 14);
-    color: #F87719;
+    color: #f87719;
 }
 .nav_list-mob {
-margin-bottom: 24px;
-font-weight: 400;
-font-size: 14px;
-line-height: calc(16 / 14);
-color: #fff;
-transition: color 300ms;
-&:hover {
-    color: #F87719;
-}
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    color: #fff;
+    transition: color 300ms;
+    &:hover {
+        color: #f87719;
+    }
 }
 .nav_list-current {
     color: var(--accent-color);
 }
-
-
-
-
-
 
 .theme_sunshine {
     background-color: #fff;
@@ -241,18 +235,21 @@ transition: color 300ms;
     }
 
     .tui-page-btn.tui-is-selected {
-        color: black
+        color: black;
     }
 
-    .menu, .nav, .nav_list {
+    .menu,
+    .nav,
+    .nav_list {
         color: #595959;
-        &:hover{
+        &:hover {
             color: var(--accent-color);
         }
     }
-    .nav-mob, .nav_list-mob {
+    .nav-mob,
+    .nav_list-mob {
         color: #111111;
-        &:hover{
+        &:hover {
             color: var(--accent-color);
         }
     }
@@ -261,75 +258,87 @@ transition: color 300ms;
     }
     .hero_btn-link {
         &:hover {
-            background-color: #F8F8F8;
+            background-color: #f8f8f8;
         }
     }
     @media screen and(min-width:768px) {
-        .hero_first-title, .hero_first-title-api {
+        .hero_first-title,
+        .hero_first-title-api {
             color: #111;
         }
-        .hero_page-box2, .hero_page-box2-api {
+        .hero_page-box2,
+        .hero_page-box2-api {
             color: #282828;
         }
     }
     @media screen and(max-width:767.27px) {
-        .hero_first-title, .hero_first-title-api {
+        .hero_first-title,
+        .hero_first-title-api {
             color: #fff;
         }
         .blind {
             background-color: #fff;
         }
     }
-    .nav-list, .nav_list-current {
+    .nav-list,
+    .nav_list-current {
         color: var(--accent-color);
     }
     .modal__container {
         background-color: var(--white-color);
         box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
-      }
-      .film-list__info .film-list__title,
-.film-list__info .film-list__char .film-list__title_text,
-.film-list__info .film-list__char .film-list__text_average,
-.film-list__info .film-list__title_text-about,
-.film-list__info .film-list__text-about,
-.film__button,
-.film-list__info .film-list__char .film-list__text {
-  color: var(--black-color);
-}  
+    }
+    .film-list__info .film-list__title,
+    .film-list__info .film-list__char .film-list__title_text,
+    .film-list__info .film-list__char .film-list__text_average,
+    .film-list__info .film-list__title_text-about,
+    .film-list__info .film-list__text-about,
+    .film__button,
+    .film-list__info .film-list__char .film-list__text {
+        color: var(--black-color);
+    }
 
-
-.library-empty__mistake{
-    color: var(--black-color);
-  }  
-  .upcoming__title, .upcoming__info--title, .upcoming__light--black, .upcoming__info--about {
-    color: var(--black-color);
-  }
-  .upcoming__light--grey, .slash, .upcoming__info--pop--range, .upcoming__info--genre--kind, .upcoming__info—genre--kind, .upcoming__info--description, .upcoming__info--white {
-    color: var(--secondary-bc-color);
-  }
-  .upcoming__info--white {
-    background: var(--s-light-gray-color);
-  } 
-  .modal__close-btn {
-    fill: #111111;
-   }
-   .hero_first-title-api {
-    @media screen and(min-width:768px) {
+    .library-empty__mistake {
+        color: var(--black-color);
+    }
+    .upcoming__title,
+    .upcoming__info--title,
+    .upcoming__light--black,
+    .upcoming__info--about {
+        color: var(--black-color);
+    }
+    .upcoming__light--grey,
+    .slash,
+    .upcoming__info--pop--range,
+    .upcoming__info--genre--kind,
+    .upcoming__info—genre--kind,
+    .upcoming__info--description,
+    .upcoming__info--white {
+        color: var(--secondary-bc-color);
+    }
+    .upcoming__info--white {
+        background: var(--s-light-gray-color);
+    }
+    .modal__close-btn {
+        fill: #111111;
+    }
+    .hero_first-title-api {
+        @media screen and(min-width:768px) {
+            color: #111111;
+        }
+    }
+    .hero_page-box2-api {
+        color: #282828;
+    }
+    #trailer {
+        &:hover {
+            background-color: #f8f8f8;
+        }
+    }
+    .hero_box1-ligth {
+        background-color: #595959;
+    }
+    .weekly-trends {
         color: #111111;
     }
-   }
-   .hero_page-box2-api {
-    color: #282828;
-   }
-   #trailer {
-    &:hover {
-        background-color: #F8F8F8;
-    }
-   }
-   .hero_box1-ligth {
-    background-color: #595959;
-   }
-  .weekly-trends {
-  color: #111111;
-}
 }

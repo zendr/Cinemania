@@ -103,9 +103,19 @@ function renderRandomFilm () {
 renderRandomFilm().then(({data}) => {
     const randomNumber = Math.floor(Math.random() * 21);
     const randomFilm = data.results[randomNumber];
-    console.log(randomFilm)
-    return randomFilm
+    // console.log(randomFilm);
+         return randomFilm
 }).then(({original_name, name, original_title, overview, backdrop_path, vote_average}) => {
+    let starIcons = '';
+          for (let i = 1; i <= 5; i++) {
+            let starClass = 'fa-star-o';
+            if (i * 2 < vote_average) {
+              starClass = 'fa-star';
+            } else if (i * 2 - 1 < vote_average) {
+              starClass = 'fa-star-half-o';
+            }
+            starIcons += `<span class="fa star ${starClass}"> </span>`;
+          }
     hero.innerHTML = ` 
     <div class="container">
     <div class="hero_box1" id="hero_box1"></div>
@@ -115,24 +125,10 @@ renderRandomFilm().then(({data}) => {
         <h1 class="hero_first-title-api">
             ${original_title || name || original_name }
         </h1>
-    </div>
-    <div class = "hero_rating" id="hero_rating">
-    <svg width = 24px height=24px>
-    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
-    </svg>
-    <svg width = 24px height=24px>
-    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
-    </svg>
-    <svg width = 24px height=24px>
-    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
-    </svg>
-    <svg width = 24px height=24px>
-    <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
-    </svg>
-    <svg width = 24px height=24px>
-    <use href="./images/svg/sprite.svg#icon-star-polu-header"></use>
-    </svg>
-    </div>
+    </div> 
+        <div class='star-rate--hero'>
+                ${starIcons}
+        </div>
         <div class="hero_page-box-api">
             <p>${overview}</p>
         </div>
@@ -142,3 +138,21 @@ renderRandomFilm().then(({data}) => {
     <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
 </div>`
 }).catch((error) => console.log(error))
+
+    // <div class = "hero_rating" id="hero_rating">
+    // <svg width = 24px height=24px>
+    // <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    // </svg>
+    // <svg width = 24px height=24px>
+    // <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    // </svg>
+    // <svg width = 24px height=24px>
+    // <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    // </svg>
+    // <svg width = 24px height=24px>
+    // <use href="./images/svg/sprite.svg#icon-star-orange-header"></use>
+    // </svg>
+    // <svg width = 24px height=24px>
+    // <use href="./images/svg/sprite.svg#icon-star-polu-header"></use>
+    // </svg>
+    // </div>
