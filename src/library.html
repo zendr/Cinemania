@@ -1,65 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cinemania | Your full Movie Library</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <meta name="description" content="Cinemania - Catalog your movie library" />
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="../src/images/favicon/icon.ico"
-      sizes="32x32"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="./sass/index.scss" />
-  </head>
 
-  <body>
-    <include src="./partials/header.html"></include>
-    <include src="./partials/modal-descr.html"></include>
-    <div class="library">
-      <div class="library-container">
-        <div class="library-hero">
-          <div class="container">
-            <h1 class="library-hero__title">
-              Create Your <br />
-              Dream Cinema
-            </h1>
-            <p class="library-hero__description">
-              Is a guide to designing a personalized movie theater experience
-              with the right equipment, customized decor, and favorite films.
-              This guide helps you bring the cinema experience into your own
-              home with cozy seating, dim lighting, and movie theater snacks.
-            </p>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinemania | Your full Movie Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta name="description" content="Cinemania - Catalog your movie library" />
+  <!-- Favicon -->
+  <link rel="icon" href="../src/images/favicon/icon.ico" sizes="32x32" type="image/x-icon" />
+  <link rel="stylesheet" href="./sass/index.scss" />
+</head>
+
+<body>
+  <include src="./partials/spiner.html"></include>
+  <include src="./partials/header.html"></include>
+  <include src="./partials/modal-descr.html"></include>
+  <div class="library">
+    <div class="library-container">
+      <div class="library-hero">
+        <div class="container">
+          <h1 class="library-hero__title">
+            Create Your <br />
+            Dream Cinema
+          </h1>
+          <p class="library-hero__description">
+            Is a guide to designing a personalized movie theater experience
+            with the right equipment, customized decor, and favorite films.
+            This guide helps you bring the cinema experience into your own
+            home with cozy seating, dim lighting, and movie theater snacks.
+          </p>
         </div>
       </div>
-
-      <div class="library-list container"></div>
-      <button
-        class="btn-library"
-        id="loadMore"
-        type="button"
-        style="display: none"
-      >
-        <a class="btn-library__link"> Load more</a>
-      </button>
     </div>
-    <include src="./partials/footer.html"></include>
-    <include src="./partials/modal.html"></include>
-    <include src="./partials/modal-team.html"></include>
-    <div class="btn-up btn-up_hide"></div>
-    <script type="module" src="./library.js"></script>
-  </body>
+
+    <div class="library-list container"></div>
+    <button class="btn-library" id="loadMore" type="button" style="display: none">
+      <a class="btn-library__link"> Load more</a>
+    </button>
+  </div>
+  <include src="./partials/footer.html"></include>
+  <include src="./partials/modal.html"></include>
+  <include src="./partials/modal-team.html"></include>
+  <div class="btn-up btn-up_hide"></div>
+  <script type="module" src="./library.js"></script>
+</body>
+
 </html>
