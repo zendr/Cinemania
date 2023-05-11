@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     padding-top: 40px;
-    height: 381px;
+    padding-bottom: 20px;
     overflow: hidden;
     @media screen and(max-width:767.27px) {
         max-width: 480px;
@@ -13,7 +13,7 @@
         flex-direction: row;
         align-items: center;
         width: 768px;
-        height: 373px;
+        min-height: 372px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -32,6 +32,7 @@
         left: 0;
         z-index: -1;
         overflow: hidden;
+        
         //background: linear-gradient(87.8deg, #0e0e0e 5.61%, rgba(14, 14, 14, 0) 40.39%),
         background:#0e0e0e ,
         url(./../images/header/bck-hero-mob-1x.png), #0e0e0e;
@@ -228,29 +229,57 @@
 }  */
 
 .hero_btn-link {
-    
+    position: relative;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+    outline: none;
+    border: none;
+    margin-top: 20px;
     font-size: 15px;
 	color: black;
 	padding: 10px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#FFC226 0%,
-		#F84119);
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#FFC226),
-		to(#F84119));
+
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 74px;
-	border: 2px solid #F84119;
 	display: inline-block;
 	text-decoration: none;
+    transition: background-color 300ms;
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 76px;
+        z-index: -1;
+        content: "";
+        background: -moz-linear-gradient(
+            top,
+            #FFC226 0%,
+            #F84119);
+        background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#FFC226),
+            to(#F84119));
+            width: 104%;
+            height: 108%;
+            @media screen and (max-width: 1277.27px) {
+                font-size: 14px;
+                line-height: calc(20 / 14);
+                padding: 10px 24px;
+            }
+            @media screen and(max-width: 767.27px) {
+                font-size: 12px;
+                line-height: calc(14 / 12);
+                padding: 12px 24px;
+            }
+    }
 
 
     &:hover,focus {
     color: #FFC226;
-	background: black;
+	background-color: black;
 }
 
 }
@@ -324,9 +353,8 @@
         p {
             font-size: 14px;
             line-height: calc(16 / 14);
-            overflow: hidden;
-            //scrollbar-width: 0px;
-            scrollbar-width: none;
+            overflow: scroll;
+            scrollbar-width: 0px;
 
 
             height: auto;
@@ -337,10 +365,12 @@
 
             @media screen and(min-width: 768px) {
                 width: 357px;
+                max-height: 100px;
             }
 
             @media screen and(min-width:1280px) {
                 width: 368px;
+                max-height: 160px;
             }
         }
     }
