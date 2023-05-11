@@ -199,7 +199,7 @@
   border: none;
   outline: none;
   @include font(14, 500, 28);
-  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  background:  #ffc226;
   border-radius: 74px;
   margin: auto;
   margin-top: 24px;
@@ -224,7 +224,7 @@
   justify-content: center;
   width: 117px;
   height: 34px;
-  background-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  background-color: #ffc226;
   border-radius: 74px;
   transition: background-color 0.3s ease, color 0.3s ease;
   @include respond-min('tablets') {
