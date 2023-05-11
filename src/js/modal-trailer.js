@@ -60,7 +60,9 @@ async function createMarkup(filmID) {
   console.log(film + 'film');
   return film
     .then(data => {
-      trailerMarkup = addMarkupTrailer(data);
+      console.log(data);
+      let trailerMarkup = addMarkupTrailer(data);
+      console.log(trailerMarkup);
       refs.trailerContainer.innerHTML = trailerMarkup;
       console.log(data);
       return data;
