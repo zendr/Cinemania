@@ -324,9 +324,9 @@
         p {
             font-size: 14px;
             line-height: calc(16 / 14);
-            overflow: hidden;
+            overflow-y: scroll;
             //scrollbar-width: 0px;
-            scrollbar-width: none;
+            //scrollbar-width: none;
 
 
             height: auto;
