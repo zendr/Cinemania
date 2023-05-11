@@ -318,12 +318,9 @@ font-weight: 500;
 .hero_page-box-api {
     p {
         overflow: scroll;
-        scrollbar-width: none;
         //scrollbar-width: 0px;
         padding-right: 5px;
-        &::-webkit-scrollbar {
-            width: 0px;
-        }
+
     }
     margin-top: 8px;
     width: 166px;
@@ -354,14 +351,11 @@ font-weight: 500;
             font-size: 14px;
             line-height: calc(16 / 14);
             overflow: scroll;
-            scrollbar-width: 0px;
 
 
             height: auto;
             width: 166px;
-            &::-webkit-scrollbar {
-                width: 0px;
-            }
+           
 
             @media screen and(min-width: 768px) {
                 width: 357px;
