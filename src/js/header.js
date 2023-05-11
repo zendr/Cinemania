@@ -111,3 +111,4 @@ export function renderHeroRandomFilm() {
     .catch(error => console.log(error));
 }
 renderHeroRandomFilm();
+

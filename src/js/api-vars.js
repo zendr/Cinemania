@@ -8,8 +8,12 @@ const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 const IMG_BASE_URL = `https://image.tmdb.org/t/p`;
 const IMG_W400 = `/w400`;
 
-
-export { API_KEY, BASE_URL, TREND_URL, SEARCH_URL, ID_URL, IMG_BASE_URL,  IMG_W400};
-
-
-
+export {
+  API_KEY,
+  BASE_URL,
+  TREND_URL,
+  SEARCH_URL,
+  ID_URL,
+  IMG_BASE_URL,
+  IMG_W400,
+};
