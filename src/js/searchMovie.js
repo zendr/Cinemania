@@ -41,7 +41,7 @@ function search(event) {
 
 pagination.on('afterMove', event => {
   if (searchFilms) {
-    getTrendData(currentPage).then(data => {
+    getTrendData(event.page).then(data => {
       renderMarkup(data), saveLs('moviesData', data.results);
     });
   } else {
