@@ -39,7 +39,7 @@ function onClickRemind(event) {
   AddFilmToLibrary(movieId);
   let titleMovie = randomMovie.title;
   if (remindBtn.textContent !== 'Remove from Library') {
-    Notiflix.Notify.success(`"${titleMovie}" remove to the library`);
+    Notiflix.Notify.success(`"${titleMovie}" removed from the library`);
     return;
   }
   Notiflix.Notify.success(`"${titleMovie}" added to the library`);
