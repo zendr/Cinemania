@@ -127,15 +127,10 @@ export function renderHeroRandomFilm() {
     <div class="hero_page-box2-api">
         <p>${overview}</p>
     </div>
-
-    <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
-</div>`;
-}).catch((error) => console.log(error)) 
-=======
     <button type="button" id="trailer" data-id='${id}'class="hero_btn">Watch trailer</button>
 </div>`;
     })
     .catch(error => console.log(error));
 }
-renderHeroRandomFilm();
 
+renderHeroRandomFilm();
