@@ -129,7 +129,7 @@ export function renderHeroRandomFilm() {
     </div>
 
     <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
-</div>`
+</div>`;
 }).catch((error) => console.log(error)) 
 =======
     <button type="button" id="trailer" data-id='${id}'class="hero_btn">Watch trailer</button>
