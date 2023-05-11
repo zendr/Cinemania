@@ -56,6 +56,8 @@ function addMarkupTrailer(data) {
 
 async function createMarkup(filmID) {
   const film = getMovieById3(filmID);
+  console.log(filmID);
+  console.log(film);
   return film
     .then(data => {
       trailerMarkup = addMarkupTrailer(data);
