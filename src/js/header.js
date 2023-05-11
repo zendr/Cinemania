@@ -96,11 +96,11 @@ mobMenu.addEventListener("click", () => {
 
 
 
-function renderRandomFilm () {
+export function renderRandomFilm () {
     const data = axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55");
     return data
 }
-renderRandomFilm().then(({data}) => {
+ renderRandomFilm().then(({data}) => {
     const randomNumber = Math.floor(Math.random() * 21);
     const randomFilm = data.results[randomNumber];
     // console.log(randomFilm);
@@ -137,7 +137,7 @@ renderRandomFilm().then(({data}) => {
     </div>
     <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
 </div>`
-}).catch((error) => console.log(error))
+}).catch((error) => console.log(error)) 
 
     // <div class = "hero_rating" id="hero_rating">
     // <svg width = 24px height=24px>
