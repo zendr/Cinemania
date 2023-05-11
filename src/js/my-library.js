@@ -29,20 +29,18 @@ export function addMovieToLibrary(movieId) {
     if (movie.release_date) {
       movie.release_date = movie.release_date.slice(0, 4);
     }
-    let libraries = JSON.parse(localStorage.getItem(librariesKey));
-    if (!libraries) {
-      libraries = {};
-    }
+    let libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
     libraries[movie.id] = movie;
     localStorage.setItem(librariesKey, JSON.stringify(libraries));
   });
 }
 
 export function removeMovieFromLibrary(movieId) {
-  let libraries = JSON.parse(localStorage.getItem(librariesKey));
+  let libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
   delete libraries[movieId];
   localStorage.setItem(librariesKey, JSON.stringify(libraries));
-  if (refs.libraryList) renderLibraryData();
+ if (refs.libraryList) renderLibraryData();
+
 }
 
 export function getMovieFromLibrary(movieId) {

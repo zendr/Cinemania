@@ -3,6 +3,11 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 8px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: rgba(0, 0, 0, 0);
+}
 }
 
 body {
@@ -11,6 +16,10 @@ body {
   font-weight: 500;
   line-height: 1.33;
   background-color: #111111;
+}
+
+modal-open {
+    overflow: hidden;
 }
 
 img {
@@ -45,4 +54,16 @@ button {
 }
 a {
   cursor: pointer;
+}
+
+.star {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f84119),
+    to(#ffc226)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

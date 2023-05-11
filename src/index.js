@@ -1,4 +1,5 @@
 import './js/api-vars';
+import './js/spiner';
 import './js/api-service';
 import './js/teamModal';
 import './js/team';

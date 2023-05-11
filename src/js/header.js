@@ -81,6 +81,7 @@ function renderRandomFilm() {
   );
   return data;
 }
+
 export function renderHeroRandomFilm() {
   renderRandomFilm()
     .then(({ data }) => {
@@ -110,3 +111,4 @@ export function renderHeroRandomFilm() {
     .catch(error => console.log(error));
 }
 renderHeroRandomFilm();
+

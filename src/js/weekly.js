@@ -58,9 +58,9 @@ export async function getGenres() {
 
 // В createMarkup добавлен id и его вывод на карточку для работы модалки Евгения --- Виктор
 function renderMarkup(results) {
-   console.log(results);
+  //  console.log(results);
    getGenres().then(({ genres }) => {
-    console.log(genres);
+    // console.log(genres);
     if (results) {
       results.forEach(film => {
         const { genre_ids, release_date } = film;
@@ -78,7 +78,7 @@ function renderMarkup(results) {
       const markupList = createMarkup(results);
     if (galleryList) {
       galleryList.innerHTML = markupList;
-      console.log(markupList);
+      // console.log(markupList);
     }
     }
   });
@@ -86,7 +86,7 @@ function renderMarkup(results) {
  
 
 function createMarkup(results) {
-  console.log(results);
+  // console.log(results);
   return results.slice(0, 3).map(({ original_title, release_date, genre_ids, poster_path, vote_average, id}) => {
     let posterIMG = ``;
     if (poster_path) {

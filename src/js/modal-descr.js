@@ -1,15 +1,13 @@
 //імпортування бібліотек
 import { IMG_BASE_URL, BASE_URL, IMG_W400, API_KEY } from './api-vars';
 import { getMovieById2 } from './api-service';
-import axios from 'axios';
-import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary } from './my-library';
-// import { createListMarkup } from './render';
+import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary, renderLibraryData } from './my-library';
 
 let posterPath = '';
 let genresList = [];
 let filmMarkup = '';
-let filmsId = '';
-// 
+let filmBtn;
+let selectedMovieId;
 
 //обява перемінних
 const refs = {
@@ -20,16 +18,25 @@ const refs = {
   cardsfilm: document.querySelector('.cards-film'),
   FilmBtn: document.querySelector('.film__button'),
   libraryList: document.querySelector('.library-list'),
+  cardList: document.querySelector('.films'),
 };
 
-//додавання слухачів
-refs.openModal.addEventListener('click', openModalDescr);
-refs.closeModal.addEventListener('click', closeModalDescr);
-// refs.FilmBtn.addEventListener('click', btn);
-// function btn() {
-//   console.log("btn", btn);
-// }
+// cardList: document.getElementById('cards__list'),
 
+
+if(refs.cardList){
+  refs.cardList.addEventListener('click', createModal);
+}
+
+function createModal(event) {
+  const selectedMovie = event.target.closest('li');
+  selectedMovieId = Number(selectedMovie.getAttribute('data-id'));
+  refs.closeModal.addEventListener('click', closeModalDescr);
+
+    createMarkup(selectedMovieId);
+
+    openModalDescr();
+}
 
 //відкривання модального вікна
 function openModalDescr(e) {
@@ -38,44 +45,36 @@ function openModalDescr(e) {
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onEscBtnPress);
   document.addEventListener('click', onBackdropClick);
-  const filmID = e.target.dataset.id;
-  filmsId = filmID;
-  console.log("filmID", filmID)
-  createMarkup(filmID);
-  changeBtnLibrary(filmID);
 }
 
 function AddFilmToLibrary() {
-  const filmsId2 = refs.FilmBtn.dataset.id;
-  if (getMovieFromLibrary(filmsId2)) {
-    removeMovieFromLibrary(filmsId2);
-    if (refs.libraryList) {
-      closeModalDescr();
-    }
-    refs.FilmBtn.innerHTML = "Add to Library";
+  const filmsId2 = filmBtn.dataset.id;
+  if (getMovieFromLibrary(selectedMovieId)) {
+    removeMovieFromLibrary(selectedMovieId);
+    filmBtn.innerHTML = "Add to Library";
   } else {
-    addMovieToLibrary(filmsId2);
-    refs.FilmBtn.innerHTML = "Remove from Library";
+    addMovieToLibrary(selectedMovieId);
+    filmBtn.innerHTML = "Remove from Library";
   }
 }
 
 //Перевірка фільма у локольному сховищу та обробка  кнопки
-function changeBtnLibrary(filmsId) {
-  refs.FilmBtn.dataset.id = `${filmsId}`;
+function changeBtnLibrary(filmsId, filmBtn) {
+  // refs.FilmBtn.dataset.id = `${filmsId}`;
   if (getMovieFromLibrary(filmsId)) {
-    refs.FilmBtn.innerHTML = "Remove from Library";
+    filmBtn.innerHTML = "Remove from Library";
   } else {
-    refs.FilmBtn.innerHTML = "Add to Library";
+    filmBtn.innerHTML = "Add to Library";
   }
 }
-
 
 //Додавання розмітки по фільму
 async function createMarkup(filmID) {
   const film = getMovieById2(filmID);
   genresList = [];
-  return film.then(data => {
-    console.log(data.genres);
+  refs.cardsfilm.innerHTML = '';
+  film.then(data => {
+    // console.log(data.genres);
     const genres = data.genres;
 
     genres.forEach(genre => {
@@ -83,16 +82,19 @@ async function createMarkup(filmID) {
     });
     filmMarkup = createFilmMarkup(data);
     refs.cardsfilm.innerHTML = filmMarkup;
-    const filmBtn = document.querySelector('.film__button');
-    filmBtn.addEventListener('click', AddFilmToLibrary);
-    
-  })
+    // Зберігаємо посилання на кнопку в змінну filmBtn
+    filmBtn = document.querySelector('.film__button');
+    filmBtn.addEventListener('click', AddFilmToLibrary);  
+    // Виклик функції changeBtnLibrary
+    changeBtnLibrary(selectedMovieId, filmBtn);
 
+
+    // Додаємо слухача подій до кнопки
+})
 };
 
 //Функція закриття по ESC
 function onEscBtnPress(e) {
-  // console.log(e.code)
   if (e.code === 'Escape') {
     closeModalDescr();
   }
@@ -100,8 +102,6 @@ function onEscBtnPress(e) {
 
 //Функція закриття модалки поза межами модалки
 function onBackdropClick(e) {
-  // console.log(e.target);
-  // console.log(refs.Backdrop);
   if (e.target === refs.Backdrop) {
     closeModalDescr();
   }
@@ -115,12 +115,12 @@ function closeModalDescr(e) {
   document.removeEventListener('keydown', onEscBtnPress);
   document.removeEventListener('click', onBackdropClick);
   document.removeEventListener('click', AddFilmToLibrary);
+  if (refs.libraryList) {
+    renderLibraryData();
+    refs.cardList = document.querySelector('.films');
+    if (refs.cardList) refs.cardList.addEventListener('click', createModal)
+  }  
 }
-
-
-
-
-
 
 function createFilmMarkup(data) {
 
@@ -132,7 +132,6 @@ function createFilmMarkup(data) {
     } else {
       posterPath = 'https://i.ibb.co/C0LFwTh/OIF.jpg';
     }
-
 
     return `<li class='film-list' data-id='${id}'>
           <ul class='film-list__list'>
@@ -168,37 +167,5 @@ function createFilmMarkup(data) {
             </li>
           </ul>
       </li>`;
-    // return `<li class='film-list' data-id='${id}'>
-    //       <ul class='film-list__list'>
-    //       <li class='film-list__img'>
-    //         <img
-    //           src='${posterPath}'
-    //           alt='${original_title}'
-    //           width
-    //           loading='lazy'
-    //         />
-    //         </li>
-    //         <li class='film-list__info'>            
-    //             <h2 class='film-list__title'>${original_title}</h2>
-    //             <div>
-    //             <p class='film-list__title_text'>Vote / Votes</p>
-    //             <p class='film-list__text_average'><span  class='film-list__average'>${vote_average}</span>  /  <span  class='film-list__average'>${vote_count}</span></p>
-    //             </div>
-    //             <div>
-    //             <p class='film-list__title_text'>Popularity</p>
-    //             <p class='film-list__text'>${popularity}</p>
-    //             </div>
-    //             <div>
-    //             <p class='film-list__title_text'>Genre</p>
-    //             <p class='film-list__text'>${genresList}</p>
-    //             </div>
-    //             <div class='film-list__about'>
-    //             <p class='film-list__title_text-about'>ABOUT</p>
-    //             <p class='film-list__text-about'>${overview}</p>
-    //              </div>
-    //           </li>
-    //         </div>
-    //         </ul>
-    //         </li>`;
   }
 }

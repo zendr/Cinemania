@@ -1,16 +1,14 @@
-.cards{
-
+.cards {
     margin-bottom: 22px;
 
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         margin-bottom: 44px;
     }
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         margin-bottom: 60px;
     }
-
 }
- 
+
 .cards__list {
     display: grid;
     max-width: calc(320px - 40px);
@@ -19,19 +17,16 @@
     margin: 0 auto;
     list-style: none;
     justify-content: center;
-    
+
     position: relative;
 
-
-
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         max-width: calc(768px - 64px);
         grid-template-columns: repeat(3, minmax(224px, 1fr));
         grid-column-gap: 16px;
         grid-row-gap: 28px;
-
     }
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         max-width: calc(1280px - 64px);
         grid-template-columns: repeat(3, minmax(395px, 1fr));
         grid-column-gap: 16px;
@@ -50,10 +45,10 @@
 
     z-index: 0;
 
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         height: 325px;
     }
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         height: 574px;
     }
 }
@@ -93,10 +88,10 @@
 
     width: 280px;
 
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         width: 224px;
     }
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         width: 395px;
     }
 }
@@ -104,10 +99,10 @@
 .cards-list__img {
     border-radius: inherit;
     height: 406px;
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         height: 325px;
     }
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         height: 574px;
     }
     box-shadow: 0px 3px 4px 1px rgba(44, 133, 200, 0.2);
@@ -124,10 +119,10 @@
     text-transform: uppercase;
     overflow: hidden;
     color: var(--white-color);
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         line-height: 1.2;
     }
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         font-size: 20px;
         line-height: 1.67;
     }
@@ -138,11 +133,11 @@
     overflow: hidden;
     color: var(--light-grey-color);
 
-    @include respond-min('tablets') {
+    @include respond-min("tablets") {
         font-size: 10px;
     }
 
-    @include respond-min('pc') {
+    @include respond-min("pc") {
         font-size: 18px;
         line-height: 1.2;
     }
@@ -150,26 +145,13 @@
 
 .cards-list_second_line {
     display: flex;
-  }
-  
-  .star-rate {
+}
+
+.star-rate {
     margin-top: auto;
     margin-left: auto;
-    @include respond-min('pc') {
-      font-size: 20px;
-      line-height: 1.2;
+    @include respond-min("pc") {
+        font-size: 20px;
+        line-height: 1.2;
     }
-  }
-  
-  .star {
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#ffc226),
-      to(#f84119)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
+}

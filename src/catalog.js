@@ -1,3 +1,4 @@
+import './js/spiner';
 import './js/header';
 import './js/storage';
 import './js/pagination';
