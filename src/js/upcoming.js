@@ -9,21 +9,25 @@ import {
   IMG_BASE_URL,
   IMG_W400,
 } from './api-vars';
-import { addMovieToLibrary } from './my-library';
+import { addMovieToLibrary, removeMovieFromLibrary, getMovieFromLibrary} from './my-library';
 
 const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 
 const upcomingBlock = document.querySelector('.container__upcoming');
 
+let randomMovie;
+let movieId;
+let remindBtn;
+
+
 // FETCH FOR UPCOMIG MOVIES
 
-function fetchUpcomingMovies() {
-  //developers.themoviedb.org/3/movies/get-upcoming
-
-  https: return fetch(
+async function fetchUpcomingMovies() {
+  return fetch(
     `${UPCOMING_URL}?api_key=${API_KEY}&language=en-US&page=1`
   ).then(movieData => {
     if (!movieData.ok) {
+      Notiflix.Notify.failure(`Sorry, there are no upcoming films for today`);
       throw new Error(movieData.status);
     }
     return movieData.json();
@@ -31,25 +35,49 @@ function fetchUpcomingMovies() {
 }
 
 function onClickRemind(event) {
-  const movieId = event.target.dataset.movieid;
-  addMovieToLibrary(movieId);
+  movieId = event.target.dataset.movieid;
+  AddFilmToLibrary(movieId);
+  let titleMovie = randomMovie.title;
+  if (remindBtn.textContent !== 'Remove from Library') {
+    Notiflix.Notify.success(`"${titleMovie}" remove to the library`);
+    return;
+  }
+  Notiflix.Notify.success(`"${titleMovie}" added to the library`);
+}
+
+function AddFilmToLibrary(movieId) {
+  if (getMovieFromLibrary(movieId)) {
+    removeMovieFromLibrary(movieId);
+    remindBtn.textContent = "Remind me";
+  } else {
+    addMovieToLibrary(movieId);
+    remindBtn.textContent = "Remove from Library";
+  }
+}
+
+//Перевірка фільма у локольному сховищу та обробка  кнопки
+function changeBtnLibrary(movieId, remindBtn) {
+  if (getMovieFromLibrary(movieId)) {
+    remindBtn.textContent = "Remove from Library";
+  } else {
+    remindBtn.textContent = "Remind me";
+  }
 }
 
 async function getFetchedMovies() {
   try {
     const data = await fetchUpcomingMovies();
     const returnedResult = data.results;
-    // console.log(returnedResult);
 
     if (returnedResult.length >= 1) {
-      const randomMovie =
+      randomMovie =
         returnedResult[Math.floor(Math.random() * returnedResult.length)];
       const genreNames = await getGenresById(randomMovie.genre_ids);
       const createdMarkup = await renderMarkup({ ...randomMovie, genreNames });
       upcomingBlock.insertAdjacentHTML('beforeend', createdMarkup);
-      document
-        .querySelector('.upcoming__remindme--btn')
-        .addEventListener('click', onClickRemind);
+      remindBtn = document.querySelector('.upcoming__remindme--btn');
+      changeBtnLibrary(movieId, remindBtn);
+      remindBtn.addEventListener('click', onClickRemind);
     }
   } catch (error) {
     console.log(error);

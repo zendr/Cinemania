@@ -8,6 +8,7 @@
 
 
 //Нечаев - модалка
+
 .modal__container {
   background-color: var(--white-color);
   box-shadow: 1px 1px 14px 4px rgba(0, 0, 0, 0.22);
@@ -48,4 +49,8 @@
 //секція WEEKLY зміна кольору тексту з color: #FFFFFF; на 
 .weekly-trends{
   color: #111111;
+}
+
+.search__form--input{
+  border-color: var(--grey-color);
 }
