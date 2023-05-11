@@ -31,10 +31,11 @@
   border: none;
   background-image: url(/src/images/pagination/double-arrow-prev.png);
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 100%;
 }
 .tui-page-btn.tui-last {
   border: none;
+  margin: 0;
   background-image: url(/src/images/pagination/double-arrow-next.png);
   background-position: 50% 50%;
 }

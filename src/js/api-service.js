@@ -58,3 +58,17 @@ export const getMovieById2 = async id => {
     console.error('Smth wrong with api ID fetch' + error);
   }
 };
+
+export const getMovieById3 = async id => {
+  try {
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`
+    );
+    const result = {
+      ...data,
+    };
+    return result;
+  } catch (error) {
+    console.error('Smth wrong with api ID fetch' + error);
+  }
+};
