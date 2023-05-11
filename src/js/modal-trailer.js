@@ -34,6 +34,7 @@ function onOpenModalTrailer(event) {
   const filmID = event.target.dataset.id;
   filmsId = filmID;
   createMarkup(filmID);
+  console.log(filmID);
 }
 
 function addMarkupTrailer(data) {
@@ -41,10 +42,13 @@ function addMarkupTrailer(data) {
   const searchTrailer = data.results.find(
     element => element.name === 'Official Trailer'
   );
+  console.log(searchTrailer);
+  console.log(data.id);
   const trailerKey = searchTrailer.key;
   console.log(trailerKey);
   const URL = `https://www.youtube.com/embed/${trailerKey}`;
   if (id) {
+    console.log(id);
     return `<iframe class ="trailer__iframe" src="${URL}"  frameborder="0" allowfullscreen></iframe>`;
   }
 }
@@ -56,9 +60,11 @@ async function createMarkup(filmID) {
     .then(data => {
       trailerMarkup = addMarkupTrailer(data);
       refs.trailerContainer.innerHTML = trailerMarkup;
+      console.log(data);
       return data;
     })
     .catch(error => {
+      console.log(error);
       refs.trailerContainer.innerHTML = `<p>We are very sorry! But we couldn’t find the trailer.</p>
      <div class = "no_trailer"></div>`;
     });
