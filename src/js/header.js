@@ -75,6 +75,28 @@ mobMenu.addEventListener('click', () => {
   blind.classList.add('blind-hidden');
 });
 
+export function renderRandomFilm () {
+    const data = axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55");
+    return data
+}
+ renderRandomFilm().then(({data}) => {
+    const randomNumber = Math.floor(Math.random() * 21);
+    const randomFilm = data.results[randomNumber];
+    // console.log(randomFilm);
+         return randomFilm
+}).then(({original_name, name, original_title, overview, backdrop_path, vote_average}) => {
+    let starIcons = '';
+          for (let i = 1; i <= 5; i++) {
+            let starClass = 'fa-star-o';
+            if (i * 2 < vote_average) {
+              starClass = 'fa-star';
+            } else if (i * 2 - 1 < vote_average) {
+              starClass = 'fa-star-half-o';
+            }
+            starIcons += `<span class="fa star ${starClass}"> </span>`;
+          }
+    hero.innerHTML = ` 
+
 function renderRandomFilm() {
   const data = axios.get(
     'https://api.themoviedb.org/3/trending/all/day?api_key=249f222afb1002186f4d88b2b5418b55'
@@ -105,6 +127,11 @@ export function renderHeroRandomFilm() {
     <div class="hero_page-box2-api">
         <p>${overview}</p>
     </div>
+
+    <button type="button" id="trailer" class="hero_btn">Watch trailer</button>
+</div>`
+}).catch((error) => console.log(error)) 
+=======
     <button type="button" id="trailer" data-id='${id}'class="hero_btn">Watch trailer</button>
 </div>`;
     })
