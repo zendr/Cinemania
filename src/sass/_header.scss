@@ -234,6 +234,10 @@ body {
         color: #000;
     }
 
+    .search__form--input {
+        border-color: var(--grey-color);
+    }
+
     .tui-page-btn.tui-is-selected {
         color: black;
     }

@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
 
+  @include respond-min("tablets") {
+    align-items: start;
+  }
+
   @include respond-min("pc") {
     align-items: start;
     flex-direction: row;
