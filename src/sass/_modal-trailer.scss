@@ -1,12 +1,8 @@
 .modal__container__trailer {
   align-items: center;
   justify-content: center;
-  overflow-x: auto;
   z-index: 199;
   position: absolute;
-
-  // height: 100%;
-  // border: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -14,7 +10,6 @@
 
   box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
   background-color: var(--black-color);
-  // background-color: var(--white-color);
   @include font(24, 500, 32, 0);
   font-family: var(--main-font);
   color: var(--white-color);
