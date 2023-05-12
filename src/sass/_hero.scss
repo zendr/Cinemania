@@ -317,7 +317,7 @@ font-weight: 500;
 }
 .hero_page-box-api {
     p {
-        overflow: scroll;
+        overflow-y: scroll;
         //scrollbar-width: 0px;
         padding-right: 5px;
 
@@ -331,7 +331,7 @@ font-weight: 500;
     line-height: calc(16 / 14);
     color: #f8f8f8;
     p {
-        overflow: scroll;
+        overflow-y: scroll;
         padding-right: 5px;
         height: 112px;
     }
