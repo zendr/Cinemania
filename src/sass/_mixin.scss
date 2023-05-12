@@ -1,7 +1,7 @@
 $breakpoints: (
   'phone': 480px,
   'tablets': 768px,
-  'pc': 1200px,
+  'pc': 1280px,
 ) !default;
 
 @mixin respond-min($breakpoint) {
